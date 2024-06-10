@@ -4,7 +4,10 @@ interface Props {
 }
 import '@fontsource-variable/onest';
 import Header from '../components/Header.astro'
-const { title } = Astro.props;
+import Contacto from '../components/Contacto.astro';
+import Presentacion from '../components/Presentacion.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
 
 ---
 
@@ -16,10 +19,14 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Porfolio Samuel Gauna - Desarrollador y Programador Web</title>
 	</head>
 	<body>
 		<Header/>
+		<Presentacion></Presentacion>
+		<Contacto></Contacto>
+		<Experience></Experience>
+		<Projects></Projects>
 		<slot />
 	</body>
 </html>
