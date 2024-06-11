@@ -1,14 +1,49 @@
 ---
 import Code from "./icons/Code.astro"
+import Carrousel from "./Carrousel.astro"
 
 const PROJECTS = [
     {
         title: "Appify",
-        description: "Una plataforma de control de gestion contable, se encarga de la facturacion, gestion de clientes, gestion de usuarios",
+        description: "Una plataforma de control de gestion contable, se encarga de la facturacion, gestion de clientes y gestion de usuarios",
         github: "#",
         link: "https://appify.cl/",
         img: '/projectsimg/appify.webp',
         //tags: ['NODE', 'EXPRESS', 'PRISMA', 'MYSQL']
+    },
+    {
+        title: "API de facturación",
+        description: "Es una API creada para la emisión de documentos fiscales, generación de XMLs, generación de PDF y administración de usuarios autorizados a facturar. Se realizó con Python y FastAPI, ya que facilita la generación de documentación de la API.",
+        github: "#",
+        link: "https://appify-fas-api.vercel.app/docs",
+        img: '/projectsimg/fastapidte.webp',
+    },
+    {
+        title: "Microservicio de Socket para notificaciones en tiempo real",
+        description: "Este proyecto consiste en un microservicio desarrollado con Node.js que utiliza sockets para la recepción y envío de datos en tiempo real a un front-end, notificando a todos los usuarios conectados. El microservicio es capaz de manejar múltiples procesos utilizando cluster, garantizando así una alta disponibilidad y escalabilidad.",
+        tecnologias_usadas: "Node.js, Express, Socket.io, Redis (para el adaptador de socket), y Cluster",
+        link: "https://github.com/samugauna7job/socket_simple_for_Appify.git",
+        linkToImg: "/projectsimg/socket-diagram.svg",
+        img: "/projectsimg/code_socket.webp"
+    },
+    {
+        title: "Aplicación web de gestión interna",
+        description: "Este proyecto consistió en el desarrollo de una plataforma integral de gestión interna destinada a recopilar y organizar información de clientes a través de técnicas de scraping y consumo de APIs. La finalidad principal era facilitar a los vendedores el acceso a datos relevantes sobre clientes y sus empresas, optimizando así el proceso de ventas.",
+        github: "#",
+        link: "#",
+        imgs: [
+            '/projectsimg/scraping/scraping1.webp',
+            '/projectsimg/scraping/scraping2.webp',
+            '/projectsimg/scraping/scaping3.webp',
+            '/projectsimg/scraping/scraping4.webp',
+        ]
+    },
+    {
+        title: "API de Scraping de Datos Tributarios",
+        description: "Este proyecto consiste en el desarrollo de una API robusta utilizando Python y Flask. La API está diseñada para realizar scraping de datos tributarios del sistema de impuestos internos, obteniendo asi, informes completos sobre formularios, proporcionando una manera eficiente y automatizada de obtener esta información a través de varios endpoints seguros.",
+        github: "https://github.com/samugauna7job/api-multi-scrap.git",
+        link: "#",
+        img: '/projectsimg/multi-scraping.webp',
     }
 ]
 ---
@@ -17,18 +52,21 @@ const PROJECTS = [
         <Code></Code>
         <h2 class="ml-4">Proyectos</h2>
     </div>
-    {
-        PROJECTS.map(({title, description /*tags*/, img}) =>(
-            <article class="justify-center">
-                <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-                <p class="text-lg mb-4 text-pretty">{description}</p>
-                {/* <ul>
-                    {tags.map(tag =>(
-                        <li>{tag}</li>
-                    ))}
-                </ul> */}
-                <img class="rounded" src={img} alt={`Captura de proyecto ${img}`}/>
-            </article>
-        ))
-    }
+    <div>
+        {PROJECTS.map(({ title, description, img, imgs, linkToImg }) => (
+        <article class="justify-center mt-16">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            {imgs ? (
+                <Carrousel imgs={imgs}></Carrousel>
+            ) : linkToImg ? (
+                <a href={linkToImg} target="_blank">
+                    <img class="rounded w-auto h-auto" src={img} alt={`Captura de proyecto ${img}`} />
+                </a>
+            ) : (
+                <img class="rounded w-auto h-auto" src={img} alt={`Captura de proyecto ${img}`} />
+            )}
+        </article>
+        ))}
+    </div>
 </section>

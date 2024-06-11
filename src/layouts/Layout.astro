@@ -3,11 +3,13 @@ interface Props {
 	title: string;
 }
 import '@fontsource-variable/onest';
+
 import Header from '../components/Header.astro'
 import Contacto from '../components/Contacto.astro';
 import Presentacion from '../components/Presentacion.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
+import Carrousel from '../components/Carrousel.astro';
 
 ---
 
@@ -28,6 +30,7 @@ import Projects from '../components/Projects.astro';
 		<Experience></Experience>
 		<Projects></Projects>
 		<slot />
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
 	</body>
 </html>
 <style is:global>
