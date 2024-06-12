@@ -1,32 +1,46 @@
 ---
 import Code from "./icons/Code.astro"
+import Node from "./icons/Node.astro"
+import Express from "./icons/Express.astro"
+import Prisma from "./icons/Prisma.astro"
+import MySQL from "./icons/MySQL.astro"
 import Carrousel from "./Carrousel.astro"
+import Tab from "./Tab.astro"
 
 const PROJECTS = [
     {
+        id: 1,
         title: "Appify",
         description: "Una plataforma de control de gestion contable, se encarga de la facturacion, gestion de clientes y gestion de usuarios",
         github: "#",
         link: "https://appify.cl/",
         img: '/projectsimg/appify.webp',
-        //tags: ['NODE', 'EXPRESS', 'PRISMA', 'MYSQL']
+        tags: [Node, Express, Prisma, MySQL],
+        funcionalidades: "funciones que cumple"
     },
     {
+        id: 2,
         title: "API de facturación",
         description: "Es una API creada para la emisión de documentos fiscales, generación de XMLs, generación de PDF y administración de usuarios autorizados a facturar. Se realizó con Python y FastAPI, ya que facilita la generación de documentación de la API.",
         github: "#",
         link: "https://appify-fas-api.vercel.app/docs",
         img: '/projectsimg/fastapidte.webp',
+        tags: [],
+        funcionalidades: "Descripción de funcionalidades aquí"  
     },
     {
+        id: 3,
         title: "Microservicio de Socket para notificaciones en tiempo real",
         description: "Este proyecto consiste en un microservicio desarrollado con Node.js que utiliza sockets para la recepción y envío de datos en tiempo real a un front-end, notificando a todos los usuarios conectados. El microservicio es capaz de manejar múltiples procesos utilizando cluster, garantizando así una alta disponibilidad y escalabilidad.",
         tecnologias_usadas: "Node.js, Express, Socket.io, Redis (para el adaptador de socket), y Cluster",
         link: "https://github.com/samugauna7job/socket_simple_for_Appify.git",
         linkToImg: "/projectsimg/socket-diagram.svg",
-        img: "/projectsimg/code_socket.webp"
+        img: "/projectsimg/code_socket.webp",
+        tags: [],  
+        funcionalidades: "Descripción de funcionalidades aquí"  
     },
     {
+        id: 4,
         title: "Aplicación web de gestión interna",
         description: "Este proyecto consistió en el desarrollo de una plataforma integral de gestión interna destinada a recopilar y organizar información de clientes a través de técnicas de scraping y consumo de APIs. La finalidad principal era facilitar a los vendedores el acceso a datos relevantes sobre clientes y sus empresas, optimizando así el proceso de ventas.",
         github: "#",
@@ -36,37 +50,72 @@ const PROJECTS = [
             '/projectsimg/scraping/scraping2.webp',
             '/projectsimg/scraping/scaping3.webp',
             '/projectsimg/scraping/scraping4.webp',
-        ]
+        ],
+        tags: [],  
+        funcionalidades: "Descripción de funcionalidades aquí"  
     },
     {
+        id: 5,
         title: "API de Scraping de Datos Tributarios",
         description: "Este proyecto consiste en el desarrollo de una API robusta utilizando Python y Flask. La API está diseñada para realizar scraping de datos tributarios del sistema de impuestos internos, obteniendo asi, informes completos sobre formularios, proporcionando una manera eficiente y automatizada de obtener esta información a través de varios endpoints seguros.",
         github: "https://github.com/samugauna7job/api-multi-scrap.git",
         link: "#",
         img: '/projectsimg/multi-scraping.webp',
+        tags: [],  
+        funcionalidades: "Descripción de funcionalidades aquí"  
+    },
+    {
+        id: 6,
+        title: "Recopilador Automático de Datos y Exportación a Excel",
+        description: "Este recopilador masivo de datos automatiza el proceso de obtención y organización de información fiscal, mejorando la eficiencia y precisión en el manejo de grandes volúmenes de datos del SII, y facilitando la generación de reportes detallados para análisis financiero y contable.",
+        github: "https://github.com/samugauna7job/api-multi-scrap.git",
+        link: "#",
+        img: '/projectsimg/localData.webp',
+        tags: [],  
+        funcionalidades: "Descripción de funcionalidades aquí"  
+    },
+    {
+        id: 7,
+        title: "Plataforma de Ecommerce Monolítica Completa",
+        description: "Este proyecto es una plataforma de ecommerce monolítica desarrollada utilizando tecnologías modernas tanto en el backend como en el frontend. El sistema está diseñado para ser completamente funcional, incluyendo todas las características esenciales necesarias para operar una tienda en línea, desde la gestión de usuarios y productos hasta el procesamiento de pedidos y autenticación segura.",
+        github: "https://github.com/SamuGauna/ecommerceBack.git",
+        link: "#",
+        imgs: [
+            '/projectsimg/eco1.webp',
+            '/projectsimg/eco2.webp',
+        ],
+        tags: [],  
+        funcionalidades: "Descripción de funcionalidades aquí"  
     }
 ]
 ---
+
 <section class="w-full mx-auto lg:w-[700px] pt-10">
     <div class="flex flex-row justify-center my-8 text-2xl">
         <Code></Code>
         <h2 class="ml-4">Proyectos</h2>
     </div>
     <div>
-        {PROJECTS.map(({ title, description, img, imgs, linkToImg }) => (
-        <article class="justify-center mt-16">
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            {imgs ? (
-                <Carrousel imgs={imgs}></Carrousel>
-            ) : linkToImg ? (
-                <a href={linkToImg} target="_blank">
-                    <img class="rounded w-auto h-auto" src={img} alt={`Captura de proyecto ${img}`} />
-                </a>
-            ) : (
-                <img class="rounded w-auto h-auto" src={img} alt={`Captura de proyecto ${img}`} />
-            )}
-        </article>
+        {PROJECTS.map((project) => (
+            <article class="justify-center mt-16">
+                <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>
+                {project.imgs ? (
+                    <Carrousel imgs={project.imgs}></Carrousel>
+                ) : project.linkToImg ? (
+                    <a href={project.linkToImg} target="_blank">
+                        <img class="rounded w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
+                    </a>
+                ) : (
+                    <img class="rounded w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
+                )}
+                <Tab class="place-items-center"
+                    id={project.id}
+                    tecnologias={project.tags}
+                    funcionalidades={project.funcionalidades}
+                    observaciones={`GitHub: ${project.github}, Link: ${project.link}`}
+                    descripcion={project.description}
+                />
+            </article>
         ))}
     </div>
 </section>
