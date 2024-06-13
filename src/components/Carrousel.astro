@@ -1,13 +1,9 @@
 ---
 const { imgs } = Astro.props;
 ---
-<!-- src="/projectsimg/scraping/scraping1.webp"
-src="/projectsimg/scraping/scraping2.webp"
-src="/projectsimg/scraping/scaping3.webp"
-src="/projectsimg/scraping/scraping4.webp" -->
 
 <section>
-    <div id="gallery" class="relative w-full" data-carousel="slide">
+    <div id="gallery" class="relative w-full rounded-lg" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             {imgs.map((img, index) => (

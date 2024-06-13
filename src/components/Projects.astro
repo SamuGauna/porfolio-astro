@@ -3,30 +3,62 @@ import Code from "./icons/Code.astro"
 import Node from "./icons/Node.astro"
 import Express from "./icons/Express.astro"
 import Prisma from "./icons/Prisma.astro"
-import MySQL from "./icons/MySQL.astro"
+import PlanetScale from "./icons/PlanetScale.astro"
 import Carrousel from "./Carrousel.astro"
 import Tab from "./Tab.astro"
-
+import Js from "./icons/Js.astro"
+import Swagger from "./icons/Swagger.astro"
+import Postman from "./icons/Postman.astro"
+import Jest from "./icons/Jest.astro"
+import Python from "./icons/Python.astro"
+import FastAPI from "./icons/FastAPI.astro"
 const PROJECTS = [
     {
         id: 1,
-        title: "Appify",
-        description: "Una plataforma de control de gestion contable, se encarga de la facturacion, gestion de clientes y gestion de usuarios",
+        title: "Backend de Appify",
+        description: "Appify es una plataforma integral diseñada para la gestión financiera y administrativa, permitiendo a usuarios y empresas controlar sus finanzas, gestionar productos y servicios, y administrar relaciones con clientes y proveedores. La plataforma soporta múltiples usuarios, con configuraciones avanzadas para facturación y pagos.",
         github: "#",
         link: "https://appify.cl/",
         img: '/projectsimg/appify.webp',
-        tags: [Node, Express, Prisma, MySQL],
-        funcionalidades: "funciones que cumple"
+        tags: [Node, Express, Prisma, PlanetScale, Js, Swagger, Postman, Jest],
+        contribuciones: [
+            "Diseño de Arquitectura: Implementación de una arquitectura basada en el patrón MVC (Modelo-Vista-Controlador) para mantener un código limpio, modular y fácil de mantener.",
+            "Desarrollo de la Capa de Datos: Uso de Prisma como ORM para la interacción con la base de datos MySQL, asegurando operaciones eficientes y seguras.",
+            "Lógica de Negocio: Implementación de la lógica de negocio en la capa de servicios, asegurando que las operaciones de datos y las reglas de negocio se ejecuten correctamente.",
+            "Controladores y Rutas: Desarrollo de controladores para manejar las rutas de la API REST, gestionando las solicitudes HTTP, respuestas y manejo de errores.",
+            "Integraciones Externas: Consumo de servicios externos mediante API REST, incluyendo la API de facturación electrónica y la integración con la pasarela de pagos de Mercado Pago.",
+            "Autenticación y Autorización: Implementación de JWT para autenticar y autorizar usuarios, asegurando que solo usuarios legítimos puedan acceder a los recursos.",
+            "Manejo de Errores y Middleware: Creación de manejadores de errores personalizados y middleware para validaciones, autenticación y otras funcionalidades comunes."
+        ],
+        obs: [
+            "Durante el desarrollo de Appify, me encontré con varios desafíos ",
+            "- Manejo de Usuarios: Fue mi primera vez trabajando en un sistema con tantos usuarios. Implementé técnicas de optimización y escalabilidad para asegurar que la plataforma pudiera manejar picos de tráfico sin problemas.",
+            "- Integración Fiscal: La integración del flujo de facturación fue compleja debido a las normativas contables chilenas y la relación con el sistema de impuestos internos. Investigué a fondo y consulté con colegas más experimentados para asegurar la conformidad y precisión.",
+            "- Seguridad de Datos: Asegurar la seguridad de los datos sensibles fue crucial. Implementé prácticas de seguridad y realicé pruebas exhaustivas para detectar y corregir vulnerabilidades potenciales.",
+            "Para superar estos desafíos, hice mucha investigación intensiva y me apoyé en el conocimiento diverso de mi equipo. Consulté con devs sr y expertos en contabilidad para guiar mis decisiones. Además, implementé muchas pruebas de testing para garantizar la calidad y la confiabilidad del software."
+        ],
+        rol: "Como desarrollador backend en el proyecto Appify, participé en el diseño e implementación de la arquitectura del sistema, siguiendo un modelo estructurado de tres capas: Repository, Service y Controller. Trabajé junto a un compañero para desarrollar funcionalidades clave y asegurar la integración fluida de servicios externos."
     },
     {
         id: 2,
         title: "API de facturación",
-        description: "Es una API creada para la emisión de documentos fiscales, generación de XMLs, generación de PDF y administración de usuarios autorizados a facturar. Se realizó con Python y FastAPI, ya que facilita la generación de documentación de la API.",
+        description: "Es una API creada para la emisión de documentos fiscales, generación de XMLs, generación de PDF y administración de usuarios autorizados a facturar.",
         github: "#",
         link: "https://appify-fas-api.vercel.app/docs",
         img: '/projectsimg/fastapidte.webp',
-        tags: [],
-        funcionalidades: "Descripción de funcionalidades aquí"  
+        tags: [Python, FastAPI, Swagger, PlanetScale],
+        contribuciones: [
+        "Diseño e Implementación de Endpoints: Creación de endpoints RESTful para la emisión y administración de documentos fiscales, incluyendo la generación de XML y PDF.",
+        "Integración con Bases de Datos: Uso de PlanetScale para interactuar con la base de datos MySQL.",
+        "Documentación de la API: Creación de documentación interactiva utilizando Swagger, facilitando a mis compañeros la comprensión y uso de la API.",
+        ],
+        obs: [
+        "Durante el desarrollo de la API de facturación, enfrenté desafíos:",
+            "- Validación de Documentos Fiscales: Implementar reglas complejas para la validación de documentos fiscales y asegurar la conformidad con las normativas vigentes.",
+            "- Esta API es intermediaria entre un servicio de Software llamado LIBRE DTE y Appify, reajustar esta API, para que funcionen en conjunto fue realmente un desafio.",
+            "Para superar estos desafíos, realicé una investigación exhaustiva sobre las normativas fiscales del sistema chileno, consulté con expertos, y utilicé herramientas de monitoreo y pruebas de carga para asegurar el rendimiento y la seguridad de la API. "
+        ],
+        rol : "Tuve que desarrollar esta API, para gestionar la administracion de clientes y su facturación. Puse en práctica la Arquitectura de Microservicios y su comunicación, es algo sumamente complicado, pero ya estaba muy familiarizado con la mayoria de conceptos y me fue esencial para este tipo de proyecto. Se realizo en FastAPI ya que facilitaba la documentacion de una manera rapida y se requeria de poco tiempo para su desarrollo. "
     },
     {
         id: 3,
@@ -99,11 +131,12 @@ const PROJECTS = [
         {PROJECTS.map((project) => (
             <article class="justify-center mt-16">
                 <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>
+                <p class="text-lg mb-4 text-pretty">{project.description}</p>
                 {project.imgs ? (
                     <Carrousel imgs={project.imgs}></Carrousel>
                 ) : project.linkToImg ? (
                     <a href={project.linkToImg} target="_blank">
-                        <img class="rounded w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
+                        <img class="rounded-lg w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
                     </a>
                 ) : (
                     <img class="rounded w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
@@ -111,9 +144,9 @@ const PROJECTS = [
                 <Tab class="place-items-center"
                     id={project.id}
                     tecnologias={project.tags}
-                    funcionalidades={project.funcionalidades}
-                    observaciones={`GitHub: ${project.github}, Link: ${project.link}`}
-                    descripcion={project.description}
+                    contribuciones={project.contribuciones}
+                    observaciones={project.obs}
+                    rol={project.rol}
                 />
             </article>
         ))}

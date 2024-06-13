@@ -1,5 +1,5 @@
 ---
-const {id, tecnologias, funcionalidades, observaciones, descripcion } = Astro.props;
+const {id, tecnologias, contribuciones, observaciones, rol } = Astro.props;
 ---
 
 
@@ -8,13 +8,13 @@ const {id, tecnologias, funcionalidades, observaciones, descripcion } = Astro.pr
     <div class="mb-4 mt-2  border-gray-200 dark:border-gray-700">
         <ul class="flex flex-wrap place-content-around -mb-px text-sm font-medium text-center" id={`default-styled-tab-${id}`} data-tabs-toggle={`#default-styled-tab-content-${id}`} data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500" data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300" role="tablist">
             <li role="presentation">
-                <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id={`contacts-styled-tab-${id}`} data-tabs-target={`#styled-contacts-${id}`} type="button" role="tab" aria-controls={`contacts-${id}`} aria-selected="false">Descripción</button>
+                <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id={`contacts-styled-tab-${id}`} data-tabs-target={`#styled-contacts-${id}`} type="button" role="tab" aria-controls={`contacts-${id}`} aria-selected="false">Mi rol</button>
+            </li>
+            <li class="me-2" role="presentation">
+                <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id={`dashboard-styled-tab-${id}`} data-tabs-target={`#styled-dashboard-${id}`} type="button" role="tab" aria-controls={`dashboard-${id}`} aria-selected="false">Contribuciones</button>
             </li>
             <li class="me-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg" id={`profile-styled-tab-${id}`} data-tabs-target={`#styled-profile-${id}`} type="button" role="tab" aria-controls={`profile-${id}`} aria-selected="false">Tecnologías utilizadas</button>
-            </li>
-            <li class="me-2" role="presentation">
-                <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id={`dashboard-styled-tab-${id}`} data-tabs-target={`#styled-dashboard-${id}`} type="button" role="tab" aria-controls={`dashboard-${id}`} aria-selected="false">Funcionalidades</button>
             </li>
             <li class="me-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id={`settings-styled-tab-${id}`} data-tabs-target={`#styled-settings-${id}`} type="button" role="tab" aria-controls={`settings-${id}`} aria-selected="false">Observaciones</button>
@@ -35,13 +35,25 @@ const {id, tecnologias, funcionalidades, observaciones, descripcion } = Astro.pr
             </p>
         </div>
         <div class="hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-dashboard-${id}`} role="tabpanel" aria-labelledby={`dashboard-styled-tab-${id}`}>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{funcionalidades}</p>
+            <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc ml-5">
+                {Array.isArray(contribuciones) ? contribuciones.map((func, index) => (
+                    <li class="my-2" key={index}>{func}</li>
+                )) : (
+                    <li>No especificado</li>
+                )}
+            </ul>
         </div>
         <div class="hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-settings-${id}`} role="tabpanel" aria-labelledby={`settings-styled-tab-${id}`}>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{observaciones}</p>
+            <ul class="text-sm text-gray-500 dark:text-gray-400 ml-5">
+                {Array.isArray(observaciones) ? observaciones.map((func, index) => (
+                    <li class="my-2">{func}</li>
+                )) : (
+                    <li>No especificado</li>
+                )}
+            </ul>
         </div>
         <div class="hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-contacts-${id}`} role="tabpanel" aria-labelledby={`contacts-styled-tab-${id}`}>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{descripcion}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">{rol}</p>
         </div>
     </div>
 </section>
