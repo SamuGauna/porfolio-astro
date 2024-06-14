@@ -12,6 +12,18 @@ import Postman from "./icons/Postman.astro"
 import Jest from "./icons/Jest.astro"
 import Python from "./icons/Python.astro"
 import FastAPI from "./icons/FastAPI.astro"
+import SocketIo from "./icons/SocketIo.astro"
+import Redis from "./icons/Redis.astro"
+import Cluster from "./icons/Cluster.astro"
+import Handlebars from "./icons/Handlebars.astro"
+import Sequelize from "./icons/Sequelize.astro"
+import MySQL from "./icons/MySQL.astro"
+import JWT from "./icons/JWT.astro"
+import Selenium from "./icons/Selenium.astro"
+import Flask from "./icons/Flask.astro"
+import BeatifulSoup from "./icons/BeatifulSoup.astro"
+import Pandas from "./icons/Pandas.astro"
+import Numpy from "./icons/Numpy.astro"
 const PROJECTS = [
     {
         id: 1,
@@ -56,20 +68,32 @@ const PROJECTS = [
         "Durante el desarrollo de la API de facturación, enfrenté desafíos:",
             "- Validación de Documentos Fiscales: Implementar reglas complejas para la validación de documentos fiscales y asegurar la conformidad con las normativas vigentes.",
             "- Esta API es intermediaria entre un servicio de Software llamado LIBRE DTE y Appify, reajustar esta API, para que funcionen en conjunto fue realmente un desafio.",
-            "Para superar estos desafíos, realicé una investigación exhaustiva sobre las normativas fiscales del sistema chileno, consulté con expertos, y utilicé herramientas de monitoreo y pruebas de carga para asegurar el rendimiento y la seguridad de la API. "
+            "Para superar esto, realicé una investigación bastante extensa sobre las normativas fiscales del sistema chileno y utilicé herramientas de monitoreo y pruebas de carga para asegurar el rendimiento y la seguridad de la API. "
         ],
-        rol : "Tuve que desarrollar esta API, para gestionar la administracion de clientes y su facturación. Puse en práctica la Arquitectura de Microservicios y su comunicación, es algo sumamente complicado, pero ya estaba muy familiarizado con la mayoria de conceptos y me fue esencial para este tipo de proyecto. Se realizo en FastAPI ya que facilitaba la documentacion de una manera rapida y se requeria de poco tiempo para su desarrollo. "
+        rol : "Tuve que desarrollar esta API, para gestionar la administracion de clientes y su facturación. Puse en práctica la Arquitectura de Microservicios y su comunicación, es algo sumamente complicado, pero ya estaba muy familiarizado con la mayoria de conceptos y me fue esencial para este tipo de proyecto. Se realizo en FastAPI ya que facilitaba la documentacion de una manera rapida y se requeria de poco tiempo para su desarrollo."
     },
     {
         id: 3,
-        title: "Microservicio de Socket para notificaciones en tiempo real",
-        description: "Este proyecto consiste en un microservicio desarrollado con Node.js que utiliza sockets para la recepción y envío de datos en tiempo real a un front-end, notificando a todos los usuarios conectados. El microservicio es capaz de manejar múltiples procesos utilizando cluster, garantizando así una alta disponibilidad y escalabilidad.",
-        tecnologias_usadas: "Node.js, Express, Socket.io, Redis (para el adaptador de socket), y Cluster",
+        title: "Microservicio de WebSocket para notificaciones en tiempo real",
+        description: "Este proyecto consiste en un microservicio para la recepción y envío de datos en tiempo real a un Front-end, notificando a todos los usuarios conectados. El microservicio es capaz de manejar múltiples procesos utilizando cluster, garantizando así una alta disponibilidad y escalabilidad.",
+        github: "#",
         link: "https://github.com/samugauna7job/socket_simple_for_Appify.git",
         linkToImg: "/projectsimg/socket-diagram.svg",
         img: "/projectsimg/code_socket.webp",
-        tags: [],  
-        funcionalidades: "Descripción de funcionalidades aquí"  
+        tags: [Express, Node, SocketIo, Redis, Cluster],  
+        rol: "Este proyecto toco desarrollarlo rapido y simple, ya que no constaba de mucha complejidad, lo que nunca habia realizo y realize en este proyecto fue el escalamiento horizontal, aplique Redis y Cluster, aunque el servicio utilizado para el despliegue(Amazon Lighsail) ya venia con estas caracteristicas.",
+        contribuciones: [
+            "Diseño e implementacion del código del socket",
+            "Realización del despliegue en Amazon Web Service",
+            "Implementación de Redis para el adaptador de socket",
+            "Implementación de Cluster para el escalado horizontal",
+            "Realización de pruebas de performance de rendimiento y escalabilidad"
+        ],
+        obs: [
+            "Durante el desarrollo de este proyecto no enfrente situaciones complejas, lo unico que considere nuevo, fue la implementacion del lado del front y la union a su respectiva sala.",
+            "Tuve que realizar tambien un codigo de prueba del lado del front para los test y para posterior mis compañeros vean la forma en la que se implementa en el front.",
+            "Fue un reto lo de aplicar Redis para la comunicación entre instancias, no lo había usado nunca y mas que la implementación, conceptualmente investigue mucho y me lleve una gran sorpresa con ese concepto."
+        ]
     },
     {
         id: 4,
@@ -83,18 +107,44 @@ const PROJECTS = [
             '/projectsimg/scraping/scaping3.webp',
             '/projectsimg/scraping/scraping4.webp',
         ],
-        tags: [],  
-        funcionalidades: "Descripción de funcionalidades aquí"  
+        tags: [Node, Jest, Handlebars, Sequelize, Js, MySQL, Selenium, JWT, Express],  
+        rol: "Como esta es una arquitectura monolítica, en este proyecto estuve encargado de varios aspectos. Trabaje con un compañero y nos asignabamos las tareas de acuerdo a la complejidad y a la familiarización de conceptos. Estuve tanto en el Front como en el Back y tambien con una participacion importante en el lado del deploy en VPS Hostinguer.",
+        contribuciones: [
+        "Desarrollé el código de scraping evitando multiples alertas bloqueantes, tomando screenshots y recopilando datos", 
+        "Realize el renderizado de la información capturada con Handlebars.",
+        "Realize la refactorización del código, ajustandolo para que las futuras implementaciones no sean complejas de realizar, para su facíl entendimiento y evitar la repetición de código innecesaria.",
+        "Realice la arquitectura del sistema de backend, basandome en un modelo MVC.",
+        "Establecí las relaciones del ORM de los respectivos Modelos",
+        "Realice pruebas unitarias sobre la info recibida del scraping",
+        "Estuve encargado del deploy en multiples etapas del proyecto, utilizando el servicio VPS de Hostinguer"
+        ],
+        obs: [
+            "En este proyecto, lo que realmente fue un reto fue realizar un despliegue con un sistema de scraping. Al utilizar un navegador para la recopilación de datos, tuve muchas dificultades para entender conceptualmente cómo funciona el servidor y cómo hacer que el scraping funcione en un servidor.",
+            "Al no tener navegador en el servidor, no funcionaba. Entonces procedí a investigar bastante, ya que hay pocos tutoriales e información sobre este tema, y descubrí que, con el driver del navegador correspondiente al sistema operativo y a la versión del navegador, podía realizar correctamente la función del scraping.",
+            "Fue un camino bastante frustrante al principio, pero la satisfacción cuando se logró fue espectacular."
+        ]
     },
     {
         id: 5,
         title: "API de Scraping de Datos Tributarios",
-        description: "Este proyecto consiste en el desarrollo de una API robusta utilizando Python y Flask. La API está diseñada para realizar scraping de datos tributarios del sistema de impuestos internos, obteniendo asi, informes completos sobre formularios, proporcionando una manera eficiente y automatizada de obtener esta información a través de varios endpoints seguros.",
+        description: "La API está diseñada para realizar scraping de datos tributarios del sistema de impuestos internos, obteniendo asi, informes completos sobre formularios, proporcionando una manera eficiente y automatizada de obtener esta información a través de varios endpoints seguros.",
         github: "https://github.com/samugauna7job/api-multi-scrap.git",
         link: "#",
         img: '/projectsimg/multi-scraping.webp',
-        tags: [],  
-        funcionalidades: "Descripción de funcionalidades aquí"  
+        tags: [Flask, Python, Selenium, BeatifulSoup, Pandas, "Pytest" ],
+        rol: ["Este proyecto fue por decision propia, ante multiples requerimientos de datos de diferentes personas en la empresa. Opte por automatizar este proceso, la realización de una API con un pequeño Form para que se obtengan los datos de diferentes formularios.",
+            "Estos codigos de scraping ya estaban desarrollados por mi, solo tuve que hacer una api para que las diferentes porciones de código actuaran en conjunto, para la facilidad de la persona solicitante de estos datos."
+        ],
+        contribuciones: [
+            "Estructuración de un backend bastante simple, con solo 4 endpoints, pero la info retornada por estos es bastante robusta.",
+            "Un pequeño formulario de ingreso de usuario y password para su posterior recopilación de datos.",
+            "Desarrollé el código de scraping para obtener los datos de los formularios.",
+            "Realice la refactorización del código, ajustandolo para que las futuras implementaciones.",
+            "Realice pruebas unitarias sobre la info recibida del scraping."
+        ],
+        obs : [
+            "Este proyecto no me trajo mayores complicaciones, fue una automatización bastante óptima para los contadores y legales de la empresa ya que con solo dos datos, podian obtener en segundos informes completos sobre la situacion tributaria del cliente."
+        ]
     },
     {
         id: 6,
@@ -103,7 +153,7 @@ const PROJECTS = [
         github: "https://github.com/samugauna7job/api-multi-scrap.git",
         link: "#",
         img: '/projectsimg/localData.webp',
-        tags: [],  
+        tags: [Numpy, Python],  
         funcionalidades: "Descripción de funcionalidades aquí"  
     },
     {
