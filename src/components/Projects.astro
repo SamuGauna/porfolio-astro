@@ -24,6 +24,9 @@ import Flask from "./icons/Flask.astro"
 import BeatifulSoup from "./icons/BeatifulSoup.astro"
 import Pandas from "./icons/Pandas.astro"
 import Numpy from "./icons/Numpy.astro"
+import AWS from "./icons/AWS.astro"
+import Pytest from "./icons/Pytest.astro"
+import Mongo from "./icons/Mongo.astro"
 const PROJECTS = [
     {
         id: 1,
@@ -80,8 +83,8 @@ const PROJECTS = [
         link: "https://github.com/samugauna7job/socket_simple_for_Appify.git",
         linkToImg: "/projectsimg/socket-diagram.svg",
         img: "/projectsimg/code_socket.webp",
-        tags: [Express, Node, SocketIo, Redis, Cluster],  
-        rol: "Este proyecto toco desarrollarlo rapido y simple, ya que no constaba de mucha complejidad, lo que nunca habia realizo y realize en este proyecto fue el escalamiento horizontal, aplique Redis y Cluster, aunque el servicio utilizado para el despliegue(Amazon Lighsail) ya venia con estas caracteristicas.",
+        tags: [Express, Node, SocketIo, Redis, Cluster, AWS],  
+        rol: "Este proyecto toco desarrollarlo rapido y simple, ya que no constaba de mucha complejidad, lo que nunca habia realizado y realize en este proyecto fue el escalamiento horizontal, aplique Redis y Cluster, aunque el servicio utilizado para el despliegue(Amazon Lighsail) ya venia con estas caracteristicas.",
         contribuciones: [
             "Diseño e implementacion del código del socket",
             "Realización del despliegue en Amazon Web Service",
@@ -131,8 +134,8 @@ const PROJECTS = [
         github: "https://github.com/samugauna7job/api-multi-scrap.git",
         link: "#",
         img: '/projectsimg/multi-scraping.webp',
-        tags: [Flask, Python, Selenium, BeatifulSoup, Pandas, "Pytest" ],
-        rol: ["Este proyecto fue por decision propia, ante multiples requerimientos de datos de diferentes personas en la empresa. Opte por automatizar este proceso, la realización de una API con un pequeño Form para que se obtengan los datos de diferentes formularios.",
+        tags: [Flask, Python, Selenium, BeatifulSoup, Pandas, Pytest ],
+        rol: ["Este proyecto fue por decision propia, ante multiples requerimientos de datos de diferentes personas en la empresa. Opte por automatizar este proceso, la realización de una API con un pequeño Form para que se obtengan los datos de diferentes formularios. ",
             "Estos codigos de scraping ya estaban desarrollados por mi, solo tuve que hacer una api para que las diferentes porciones de código actuaran en conjunto, para la facilidad de la persona solicitante de estos datos."
         ],
         contribuciones: [
@@ -153,8 +156,17 @@ const PROJECTS = [
         github: "https://github.com/samugauna7job/api-multi-scrap.git",
         link: "#",
         img: '/projectsimg/localData.webp',
-        tags: [Numpy, Python],  
-        funcionalidades: "Descripción de funcionalidades aquí"  
+        tags: [Numpy, Python, BeatifulSoup, Pandas, Selenium],  
+        rol: ["Desarrolle un scraping capaz de capturar diferentes tipos de datos tributarios, leer la información de clientes en un excel y re escribir este mismo con los datos solicitados de cada cliente."],
+        contribuciones: ["Desarrollo de un código perceptible a errores y alertas bloqueantes.",
+            "Manejo de hilos de trabajo y partición del trabajo.",
+            "Monitorización de la maquina a utilizar, para captar fallos o posibles errores en la captura de datos.",
+            "Realizacion de back ups para posible perdida de datos."
+        ],
+        obs : ["Este es unos de los primeros proyectos que afronte en la empresa Mi asesor.cl, habia una cantidad de casi 1000 clientes en un excel, y se necesitaban algunos datos tributarios.",
+            "Este código se ejecuta de manera local, ya que no hacía falta realizar un deploy, era una necesidad instantanea y dependiendo de la información a recolectar, este código se modificaba de acuerdo a esto mismo.",
+            "Este código recorre mas de 1000 clientes, en diferentes hilos de trabajos simultaneamente, acortando el tiempo de recolección de información y re escribiendo este excel con múltiples datos."
+        ]
     },
     {
         id: 7,
@@ -166,8 +178,11 @@ const PROJECTS = [
             '/projectsimg/eco1.webp',
             '/projectsimg/eco2.webp',
         ],
-        tags: [],  
-        funcionalidades: "Descripción de funcionalidades aquí"  
+        tags: [SocketIo, Swagger, Node, JWT, Js, Jest, Handlebars, Express, Mongo],  
+        rol: ["Esta aplicación monolitica se realizo a modo de simple y pura práctica, se cubrieron todos los aspectos funcionales de un ecommerce."],
+        contribuciones: ["Desarrollo de una Arquitectura Monolitica",
+        ],
+        obs : ["Este proyecto lo coloque porque para mi, representa uno de mis primeros grandes pasos en el mundo del Backend, este proyecto me ayudo en muchos aspectos y conocimientos que hoy valoro tener, le tengo mucho cariño y al dia de hoy aplico mucho lo que aprendi con este proyecto."]
     }
 ]
 ---
