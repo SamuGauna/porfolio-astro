@@ -37,7 +37,7 @@ const {id, tecnologias, contribuciones, observaciones, rol } = Astro.props;
         <div class="hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-dashboard-${id}`} role="tabpanel" aria-labelledby={`dashboard-styled-tab-${id}`}>
             <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc ml-5">
                 {Array.isArray(contribuciones) ? contribuciones.map((func, index) => (
-                    <li class="my-2" key={index}>{func}</li>
+                    <li class="my-2">{func}</li>
                 )) : (
                     <li>No especificado</li>
                 )}
