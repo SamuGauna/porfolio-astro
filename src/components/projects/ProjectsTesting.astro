@@ -1,0 +1,48 @@
+---
+import Tab from "../utils/Tab.astro"
+import Testing from "../icons/Testing.astro"
+import Java from "../icons/Java.astro"
+const PROJECTS = [
+    {
+        id: 8,
+        title: "Java Practice",
+        description: "Este proyecto cuenta con practica en lenguaje JAVA, hay ejercicios de nivel principiante, avanzado y por encima de avanzado. Fue durante mi estadia en el Instituto educativo EGG, formativo para aplicarlo en Testing.",
+        github: "https://github.com/SamuGauna/JavaPractice.git",
+        img: '/projectsTestingimg/javaPractice.webp',
+        tags: [Java],
+        contribuciones: [],
+        obs: ["Los niveles de estos ejercicios:",
+        "- Facíl",
+        "- Intermedio",
+        "- Avanzado",
+        ],
+        rol: "Realicé varios ejercicios prácticos para poder obtener la práctica necesaria para desarrollar tests en Java."
+    },
+]
+---
+
+<section class="w-full mx-auto lg:w-[700px] pt-10">
+    <div class="flex flex-row justify-center my-8 text-2xl">
+        <Testing></Testing>
+        <h2 class="ml-4 mt-4">Testing</h2>
+    </div>
+    <div>
+        {PROJECTS.map((project) => (
+            <article class="justify-center mt-16">
+                <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>
+                <p class="text-lg mb-4 text-pretty">{project.description}</p>
+                {(
+                    <img class="rounded w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
+                )}
+                <Tab class="place-items-center"
+                    id={project.id}
+                    tecnologias={project.tags}
+                    contribuciones={project.contribuciones}
+                    observaciones={project.obs}
+                    rol={project.rol}
+                    github={project.github}
+                />
+            </article>
+        ))}
+    </div>
+</section>

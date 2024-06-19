@@ -8,8 +8,10 @@ import Header from '../components/Header.astro'
 import Contacto from '../components/Contacto.astro';
 import Presentacion from '../components/Presentacion.astro';
 import Experience from '../components/Experience.astro';
-import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro';
+import Projects from '../components/projects/Projects.astro';
+import ProjectsTesting from '../components/projects/ProjectsTesting.astro';
+import SkillTech from '../components/SkillTech.astro';
 
 ---
 
@@ -23,12 +25,14 @@ import Footer from '../components/Footer.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Porfolio Samuel Gauna - Desarrollador y Programador Web</title>
 	</head>
-	<body>
+	<body class="container">
 		<Header/>
 		<Presentacion></Presentacion>
 		<Contacto></Contacto>
 		<Experience></Experience>
 		<Projects></Projects>
+		<ProjectsTesting></ProjectsTesting>
+		<SkillTech></SkillTech>
 		<Footer></Footer>
 		<slot />
 		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
@@ -41,11 +45,27 @@ import Footer from '../components/Footer.astro';
 	html {
 		font-family: 'Onest Variable',system-ui, sans-serif;
 	}
-	body{
+	.container {
+	width: 100%;
+	height: 100%;
+	color: aliceblue;
+	display: flex;
+	flex-direction: column;
+	background-color: #111111;
+	background-image: linear-gradient(
+		32deg,
+		rgba(8, 8, 8, 0.74) 30px,
+		transparent
+	);
+	background-size: 60px 60px;
+	background-position: -5px -5px;
+	}
+
+	/* body{
 		background-color: #050505;
 		display: flex;
 		flex-direction: column;
 		height: 100vh;
 		color: aliceblue;
-	}
+	} */
 </style>

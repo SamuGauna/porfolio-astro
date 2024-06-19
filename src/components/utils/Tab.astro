@@ -1,8 +1,9 @@
 ---
-const {id, tecnologias, contribuciones, observaciones, rol } = Astro.props;
+import MoreInfo from "./MoreInfo.astro";
+import ViewCode from "./ViewCode.astro";
+
+const {id, tecnologias, contribuciones, observaciones, rol, github, link } = Astro.props;
 ---
-
-
 
 <section>
     <div class="mb-4 mt-2  border-gray-200 dark:border-gray-700">
@@ -51,6 +52,8 @@ const {id, tecnologias, contribuciones, observaciones, rol } = Astro.props;
                     <li>No especificado</li>
                 )}
             </ul>
+            {github && <ViewCode github={github} />}
+            {link && <MoreInfo link={link}/>}
         </div>
         <div class="hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-contacts-${id}`} role="tabpanel" aria-labelledby={`contacts-styled-tab-${id}`}>
             <p class="text-sm text-gray-500 dark:text-gray-400">{rol}</p>

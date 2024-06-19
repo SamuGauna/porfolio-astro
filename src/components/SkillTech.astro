@@ -1,0 +1,92 @@
+---
+import Skills from "./icons/Skills.astro";
+const softskills = [
+    "Empatía",
+    "Capacidad al cambio",
+    "Orientación al cliente y al valor comercial",
+    "Aprendizaje continuo y Autodidacta",
+    "Trabajo en equipo",
+    "Comunicación efectiva",
+    "Soporte al cliente",
+    "Gestión de los interesados",
+    "Desarrollo profesional",
+    "Gestión de Cambios",
+    "Cultura de la organización"
+];
+const cognitiveskills = [
+    "Análisis de los interesados",
+    "Gráficos RACI",
+    "Elección de equipo",
+    "Solución de problemas",
+    "Pensamiento estratégico",
+    "Competencias en gestión de Proyectos"
+];
+const tecskill = [
+    "Ipv4",
+    "Sistema de nombres de dominio",
+    "Modelo de red",
+    "Código binario",
+    "Linux",
+    "Estatuto del proyecto",
+    "Objetivos, alcances y criterios de éxito (SMART, OKR)",
+    "Gestión de proyectos",
+    "Trello",
+    "Asana",
+    "Monday",
+    "SmartSheet",
+    "Excel",
+    "Capas de red (IP, ARP, subredes, encapsulaciones)",
+    "Capas de transporte y de aplicación (puertos, sockets TCP)",
+    "Servicios de red (DNS, NAT, VPN, Proxies)",
+    "Administradores de red (DHCP)",
+    "Inglés B2 (Upper intermediate): Tengo una excelente comprensión tanto escuchando, leyendo o escribiendo inglés"
+]
+
+---
+
+<div class="flex flex-row justify-center">
+    <Skills></Skills>
+    <p class="text-2xl mt-16 font-semibold">Habilidades</p>
+</div>
+<div class="flex flex-row">
+    <section class="text-white">
+        <h2 class="mb-2 text-lg font-semibold dark:text-white">Blandas</h2>
+        <ul class="max-w-md space-y-1 list-inside dark:text-gray-400">
+            {softskills.map((skill) => (
+                <li class="flex items-center">
+                    <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                    </svg>
+                    {skill}
+                </li>
+            ))}
+        </ul>
+    </section>
+    <section class="text-white">
+        <h2 class="mb-2 text-lg font-semibold dark:text-white">Cognitivas</h2>
+        <ul class="max-w-md space-y-1 list-inside dark:text-gray-400">
+            {cognitiveskills.map((skill) => (
+                <li class="flex items-center">
+                    <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                    </svg>
+                    {skill}
+                </li>
+            ))}
+        </ul>
+    </section>
+    <section class="text-white">
+        <h2 class="mb-2 text-lg font-semibold dark:text-white">Técnicas</h2>
+        <ul class="max-w-md space-y-1 list-inside dark:text-gray-400">
+            {tecskill.map((skill) => (
+                <li class="flex items-center">
+                    <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                    </svg>
+                    {skill}
+                </li>
+            ))}
+        </ul>
+    </section>
+</div>
+

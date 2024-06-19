@@ -1,38 +1,37 @@
 ---
-import Code from "./icons/Code.astro"
-import Node from "./icons/Node.astro"
-import Express from "./icons/Express.astro"
-import Prisma from "./icons/Prisma.astro"
-import PlanetScale from "./icons/PlanetScale.astro"
-import Carrousel from "./Carrousel.astro"
-import Tab from "./Tab.astro"
-import Js from "./icons/Js.astro"
-import Swagger from "./icons/Swagger.astro"
-import Postman from "./icons/Postman.astro"
-import Jest from "./icons/Jest.astro"
-import Python from "./icons/Python.astro"
-import FastAPI from "./icons/FastAPI.astro"
-import SocketIo from "./icons/SocketIo.astro"
-import Redis from "./icons/Redis.astro"
-import Cluster from "./icons/Cluster.astro"
-import Handlebars from "./icons/Handlebars.astro"
-import Sequelize from "./icons/Sequelize.astro"
-import MySQL from "./icons/MySQL.astro"
-import JWT from "./icons/JWT.astro"
-import Selenium from "./icons/Selenium.astro"
-import Flask from "./icons/Flask.astro"
-import BeatifulSoup from "./icons/BeatifulSoup.astro"
-import Pandas from "./icons/Pandas.astro"
-import Numpy from "./icons/Numpy.astro"
-import AWS from "./icons/AWS.astro"
-import Pytest from "./icons/Pytest.astro"
-import Mongo from "./icons/Mongo.astro"
+import Code from "../icons/Code.astro"
+import Node from "../icons/Node.astro"
+import Express from "../icons/Express.astro"
+import Prisma from "../icons/Prisma.astro"
+import PlanetScale from "../icons/PlanetScale.astro"
+import Carrousel from "../utils/Carrousel.astro"
+import Tab from "../utils/Tab.astro"
+import Js from "../icons/Js.astro"
+import Swagger from "../icons/Swagger.astro"
+import Postman from "../icons/Postman.astro"
+import Jest from "../icons/Jest.astro"
+import Python from "../icons/Python.astro"
+import FastAPI from "../icons/FastAPI.astro"
+import SocketIo from "../icons/SocketIo.astro"
+import Redis from "../icons/Redis.astro"
+import Cluster from "../icons/Cluster.astro"
+import Handlebars from "../icons/Handlebars.astro"
+import Sequelize from "../icons/Sequelize.astro"
+import MySQL from "../icons/MySQL.astro"
+import JWT from "../icons/JWT.astro"
+import Selenium from "../icons/Selenium.astro"
+import Flask from "../icons/Flask.astro"
+import BeatifulSoup from "../icons/BeatifulSoup.astro"
+import Pandas from "../icons/Pandas.astro"
+import Numpy from "../icons/Numpy.astro"
+import AWS from "../icons/AWS.astro"
+import Pytest from "../icons/Pytest.astro"
+import Mongo from "../icons/Mongo.astro"
 const PROJECTS = [
     {
         id: 1,
         title: "Backend de Appify",
         description: "Appify es una plataforma integral diseñada para la gestión financiera y administrativa, permitiendo a usuarios y empresas controlar sus finanzas, gestionar productos y servicios, y administrar relaciones con clientes y proveedores. La plataforma soporta múltiples usuarios, con configuraciones avanzadas para facturación y pagos.",
-        github: "#",
         link: "https://appify.cl/",
         img: '/projectsimg/appify.webp',
         tags: [Node, Express, Prisma, PlanetScale, Js, Swagger, Postman, Jest],
@@ -58,7 +57,6 @@ const PROJECTS = [
         id: 2,
         title: "API de facturación",
         description: "Es una API creada para la emisión de documentos fiscales, generación de XMLs, generación de PDF y administración de usuarios autorizados a facturar.",
-        github: "#",
         link: "https://appify-fas-api.vercel.app/docs",
         img: '/projectsimg/fastapidte.webp',
         tags: [Python, FastAPI, Swagger, PlanetScale],
@@ -79,9 +77,8 @@ const PROJECTS = [
         id: 3,
         title: "Microservicio de WebSocket para notificaciones en tiempo real",
         description: "Este proyecto consiste en un microservicio para la recepción y envío de datos en tiempo real a un Front-end, notificando a todos los usuarios conectados. El microservicio es capaz de manejar múltiples procesos utilizando cluster, garantizando así una alta disponibilidad y escalabilidad.",
-        github: "#",
-        link: "https://github.com/samugauna7job/socket_simple_for_Appify.git",
-        linkToImg: "/projectsimg/socket-diagram.svg",
+        github: "https://github.com/samugauna7job/socket_simple_for_Appify.git",
+        link: "/projectsimg/socket-diagram.svg",
         img: "/projectsimg/code_socket.webp",
         tags: [Express, Node, SocketIo, Redis, Cluster, AWS],  
         rol: "Este proyecto toco desarrollarlo rapido y simple, ya que no constaba de mucha complejidad, lo que nunca habia realizado y realize en este proyecto fue el escalamiento horizontal, aplique Redis y Cluster, aunque el servicio utilizado para el despliegue(Amazon Lighsail) ya venia con estas caracteristicas.",
@@ -102,8 +99,6 @@ const PROJECTS = [
         id: 4,
         title: "Aplicación web de gestión interna",
         description: "Este proyecto consistió en el desarrollo de una plataforma integral de gestión interna destinada a recopilar y organizar información de clientes a través de técnicas de scraping y consumo de APIs. La finalidad principal era facilitar a los vendedores el acceso a datos relevantes sobre clientes y sus empresas, optimizando así el proceso de ventas.",
-        github: "#",
-        link: "#",
         imgs: [
             '/projectsimg/scraping/scraping1.webp',
             '/projectsimg/scraping/scraping2.webp',
@@ -132,7 +127,6 @@ const PROJECTS = [
         title: "API de Scraping de Datos Tributarios",
         description: "La API está diseñada para realizar scraping de datos tributarios del sistema de impuestos internos, obteniendo asi, informes completos sobre formularios, proporcionando una manera eficiente y automatizada de obtener esta información a través de varios endpoints seguros.",
         github: "https://github.com/samugauna7job/api-multi-scrap.git",
-        link: "#",
         img: '/projectsimg/multi-scraping.webp',
         tags: [Flask, Python, Selenium, BeatifulSoup, Pandas, Pytest ],
         rol: ["Este proyecto fue por decision propia, ante multiples requerimientos de datos de diferentes personas en la empresa. Opte por automatizar este proceso, la realización de una API con un pequeño Form para que se obtengan los datos de diferentes formularios. ",
@@ -154,7 +148,6 @@ const PROJECTS = [
         title: "Recopilador Automático de Datos y Exportación a Excel",
         description: "Este recopilador masivo de datos automatiza el proceso de obtención y organización de información fiscal, mejorando la eficiencia y precisión en el manejo de grandes volúmenes de datos del SII, y facilitando la generación de reportes detallados para análisis financiero y contable.",
         github: "https://github.com/samugauna7job/api-multi-scrap.git",
-        link: "#",
         img: '/projectsimg/localData.webp',
         tags: [Numpy, Python, BeatifulSoup, Pandas, Selenium],  
         rol: ["Desarrolle un scraping capaz de capturar diferentes tipos de datos tributarios, leer la información de clientes en un excel y re escribir este mismo con los datos solicitados de cada cliente."],
@@ -173,7 +166,7 @@ const PROJECTS = [
         title: "Plataforma de Ecommerce Monolítica Completa",
         description: "Este proyecto es una plataforma de ecommerce monolítica desarrollada utilizando tecnologías modernas tanto en el backend como en el frontend. El sistema está diseñado para ser completamente funcional, incluyendo todas las características esenciales necesarias para operar una tienda en línea, desde la gestión de usuarios y productos hasta el procesamiento de pedidos y autenticación segura.",
         github: "https://github.com/SamuGauna/ecommerceBack.git",
-        link: "#",
+
         imgs: [
             '/projectsimg/eco1.webp',
             '/projectsimg/eco2.webp',
@@ -199,10 +192,6 @@ const PROJECTS = [
                 <p class="text-lg mb-4 text-pretty">{project.description}</p>
                 {project.imgs ? (
                     <Carrousel imgs={project.imgs}></Carrousel>
-                ) : project.linkToImg ? (
-                    <a href={project.linkToImg} target="_blank">
-                        <img class="rounded-lg w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
-                    </a>
                 ) : (
                     <img class="rounded w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
                 )}
@@ -212,6 +201,8 @@ const PROJECTS = [
                     contribuciones={project.contribuciones}
                     observaciones={project.obs}
                     rol={project.rol}
+                    github={project.github}
+                    link={project.link}
                 />
             </article>
         ))}
