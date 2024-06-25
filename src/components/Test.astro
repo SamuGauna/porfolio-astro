@@ -1,0 +1,87 @@
+---
+const softskills = [
+    "Empatía",
+    "Capacidad al cambio",
+    "Orientación al cliente y al valor comercial",
+    "Aprendizaje continuo y Autodidacta",
+    "Trabajo en equipo",
+    "Comunicación efectiva",
+    "Soporte al cliente",
+    "Gestión de los interesados",
+    "Desarrollo profesional",
+    "Gestión de Cambios",
+    "Cultura de la organización"
+];
+const cognitiveskills = [
+    "Análisis de los interesados",
+    "Gráficos RACI",
+    "Elección de equipo",
+    "Solución de problemas",
+    "Pensamiento estratégico",
+    "Competencias en gestión de Proyectos"
+];
+const tecskill = [
+    "Ipv4",
+    "Sistema de nombres de dominio",
+    "Modelo de red",
+    "Código binario",
+    "Linux",
+    "Estatuto del proyecto",
+    "Objetivos, alcances y criterios de éxito (SMART, OKR)",
+    "Gestión de proyectos",
+    "Trello",
+    "Asana",
+    "Monday",
+    "SmartSheet",
+    "Excel",
+    "Capas de red (IP, ARP, subredes, encapsulaciones)",
+    "Capas de transporte y de aplicación (puertos, sockets TCP)",
+    "Servicios de red (DNS, NAT, VPN, Proxies)",
+    "Administradores de red (DHCP)",
+    "Inglés B2 (Upper intermediate): Tengo una excelente comprensión tanto escuchando, leyendo o escribiendo inglés"
+];
+
+---
+<p class="mt-16 flex justify-center text-2xl font-semibold">Habilidades</p>
+<div class="mb-4 mt-2  border-gray-200 dark:border-gray-700">
+    <ul class="flex flex-wrap place-content-around -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+        <li class="me-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Blandas</button>
+        </li>
+        <li class="me-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Cognitivas</button>
+        </li>
+        <li class="me-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Técnicas</button>
+        </li>
+    </ul>
+</div>
+<div id="default-tab-content">
+    <div class="flex flex-row place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <ul class="grid justify-items-center text-sm text-white list-disc">
+            {Array.isArray(softskills) ? softskills.map((skill, index) => (
+                <li class="my-1">{skill}</li>
+            )) : (
+                <li>No especificado</li>
+            )}
+        </ul>
+    </div>
+    <div class="flex flex-row place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+        <ul class="grid justify-items-center text-sm text-white list-disc items-center">
+            {Array.isArray(cognitiveskills) ? cognitiveskills.map((skill, index) => (
+                <li class="my-1">{skill}</li>
+            )) : (
+                <li>No especificado</li>
+            )}
+        </ul>
+    </div>
+    <div class="flex flex-row place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+        <ul class="grid justify-items-center text-sm text-white list-disc">
+            {Array.isArray(tecskill) ? tecskill.map((skill, index) => (
+                <li class="my-1">{skill}</li>
+            )) : (
+                <li>No especificado</li>
+            )}
+        </ul>
+    </div>
+</div>

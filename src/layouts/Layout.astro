@@ -12,7 +12,8 @@ import Footer from '../components/Footer.astro';
 import Projects from '../components/projects/Projects.astro';
 import ProjectsTesting from '../components/projects/ProjectsTesting.astro';
 import SkillTech from '../components/SkillTech.astro';
-
+import Habilidades from '../components/Habilidades.astro';
+import Test from '../components/Test.astro'
 ---
 
 <!doctype html>
@@ -28,11 +29,11 @@ import SkillTech from '../components/SkillTech.astro';
 	<body class="container">
 		<Header/>
 		<Presentacion></Presentacion>
-		<Contacto></Contacto>
 		<Experience></Experience>
 		<Projects></Projects>
 		<ProjectsTesting></ProjectsTesting>
-		<SkillTech></SkillTech>
+		<Test></Test>
+		<Contacto></Contacto>
 		<Footer></Footer>
 		<slot />
 		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
@@ -43,7 +44,11 @@ import SkillTech from '../components/SkillTech.astro';
 		color-scheme: light dark;
 	}
 	html {
-		font-family: 'Onest Variable',system-ui, sans-serif;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		overflow-x: hidden;
+		font-family: 'Onest Variable', system-ui, sans-serif;
 	}
 	.container {
 	width: 100%;
@@ -51,10 +56,10 @@ import SkillTech from '../components/SkillTech.astro';
 	color: aliceblue;
 	display: flex;
 	flex-direction: column;
-	background-color: #111111;
+	background-color: #292828;
 	background-image: linear-gradient(
 		32deg,
-		rgba(8, 8, 8, 0.74) 30px,
+		rgba(27, 27, 27, 0.74) 30px,
 		transparent
 	);
 	background-size: 60px 60px;
