@@ -1,4 +1,32 @@
 ---
+import AWS from "./icons/AWS.astro";
+import BeatifulSoup from "./icons/BeatifulSoup.astro";
+import Cluster from "./icons/Cluster.astro";
+import Express from "./icons/Express.astro";
+import FastAPI from "./icons/FastAPI.astro";
+import Flask from "./icons/Flask.astro";
+import Github from "./icons/Github.astro";
+import Handlebars from "./icons/Handlebars.astro";
+import JWT from "./icons/JWT.astro";
+import Java from "./icons/Java.astro";
+import Jest from "./icons/Jest.astro";
+import Js from "./icons/Js.astro";
+import Mongo from "./icons/Mongo.astro";
+import MySQL from "./icons/MySQL.astro";
+import Node from "./icons/Node.astro";
+import Numpy from "./icons/Numpy.astro";
+import Pandas from "./icons/Pandas.astro";
+import PlanetScale from "./icons/PlanetScale.astro";
+import Postman from "./icons/Postman.astro";
+import Prisma from "./icons/Prisma.astro";
+import Pytest from "./icons/Pytest.astro";
+import Python from "./icons/Python.astro";
+import Redis from "./icons/Redis.astro";
+import Selenium from "./icons/Selenium.astro";
+import Sequelize from "./icons/Sequelize.astro";
+import SocketIo from "./icons/SocketIo.astro";
+import Swagger from "./icons/Swagger.astro";
+
 const softskills = [
     "Empatía",
     "Capacidad al cambio",
@@ -10,9 +38,7 @@ const softskills = [
     "Gestión de los interesados",
     "Desarrollo profesional",
     "Gestión de Cambios",
-    "Cultura de la organización"
-];
-const cognitiveskills = [
+    "Cultura de la organización",
     "Análisis de los interesados",
     "Gráficos RACI",
     "Elección de equipo",
@@ -20,36 +46,15 @@ const cognitiveskills = [
     "Pensamiento estratégico",
     "Competencias en gestión de Proyectos"
 ];
-const tecskill = [
-    "Ipv4",
-    "Sistema de nombres de dominio",
-    "Modelo de red",
-    "Código binario",
-    "Linux",
-    "Estatuto del proyecto",
-    "Objetivos, alcances y criterios de éxito (SMART, OKR)",
-    "Gestión de proyectos",
-    "Trello",
-    "Asana",
-    "Monday",
-    "SmartSheet",
-    "Excel",
-    "Capas de red (IP, ARP, subredes, encapsulaciones)",
-    "Capas de transporte y de aplicación (puertos, sockets TCP)",
-    "Servicios de red (DNS, NAT, VPN, Proxies)",
-    "Administradores de red (DHCP)",
-    "Inglés B2 (Upper intermediate): Tengo una excelente comprensión tanto escuchando, leyendo o escribiendo inglés"
+const tecSkill = [
+    AWS, BeatifulSoup, Cluster, Express, FastAPI, Flask, Github, Handlebars, Java, Jest, Js, JWT, Mongo, MySQL, Node, Numpy, Pandas, PlanetScale, Postman, Prisma, Pytest, Python, Redis, Selenium, Sequelize, SocketIo, Swagger
 ];
-
 ---
-<p class="mt-16 flex justify-center text-2xl font-semibold">Habilidades</p>
+<p id="hab" class="mt-16 flex justify-center text-2xl font-semibold">Habilidades</p>
 <div class="mb-4 mt-2  border-gray-200 dark:border-gray-700">
     <ul class="flex flex-wrap place-content-around -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
         <li class="me-2" role="presentation">
             <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Blandas</button>
-        </li>
-        <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Cognitivas</button>
         </li>
         <li class="me-2" role="presentation">
             <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Técnicas</button>
@@ -58,7 +63,7 @@ const tecskill = [
 </div>
 <div id="default-tab-content">
     <div class="flex flex-row place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <ul class="grid justify-items-center text-sm text-white list-disc">
+        <ul class="grid grid-cols-3 justify-items-center text-sm text-white list-disc">
             {Array.isArray(softskills) ? softskills.map((skill, index) => (
                 <li class="my-1">{skill}</li>
             )) : (
@@ -66,22 +71,58 @@ const tecskill = [
             )}
         </ul>
     </div>
-    <div class="flex flex-row place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-        <ul class="grid justify-items-center text-sm text-white list-disc items-center">
-            {Array.isArray(cognitiveskills) ? cognitiveskills.map((skill, index) => (
-                <li class="my-1">{skill}</li>
-            )) : (
-                <li>No especificado</li>
-            )}
-        </ul>
-    </div>
-    <div class="flex flex-row place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-        <ul class="grid justify-items-center text-sm text-white list-disc">
-            {Array.isArray(tecskill) ? tecskill.map((skill, index) => (
-                <li class="my-1">{skill}</li>
-            )) : (
-                <li>No especificado</li>
-            )}
+    <div class="grid grid-flow-col place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+        <ul class="grid grid-cols-7 justify-items-center text-sm text-white">
+            {tecSkill && tecSkill.length > 0 ? (
+                tecSkill.map((Tecnologia, index) => (
+                    <div class="m-6">
+                        <Tecnologia />
+                    </div>
+                    ))
+                ) : (
+                    'No especificado'
+                )}
         </ul>
     </div>
 </div>
+<!-- <style>
+.card {
+    width: 190px;
+    height: 254px;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(
+    180deg,
+    rgb(0, 183, 255),
+    rgb(255, 48, 255)
+  );
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.card::after {
+  content: "";
+  position: absolute;
+  background: #2e2828;
+  inset: 5px;
+  border-radius: 15px;
+}
+</style> -->
