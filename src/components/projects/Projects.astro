@@ -179,21 +179,20 @@ const PROJECTS = [
     }
 ]
 ---
-
-<section id="pro" class="w-full mx-auto lg:w-[700px] pt-10">
-    <div class="flex flex-row justify-center my-8 text-2xl">
+<section id="pro" class="w-full mx-auto lg:max-w-[1000px] pt-10 px-6 sm:px-8 md:px-12">
+    <div class="flex flex-row justify-center my-8 text-lg sm:text-xl">
         <Code></Code>
-        <h2 class="ml-4">Proyectos</h2>
+        <h2 class="ml-4 text-base sm:text-lg">Proyectos</h2>
     </div>
     <div>
         {PROJECTS.map((project) => (
             <article class="justify-center mt-16">
-                <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{project.title}</h3>
-                <p class="text-lg mb-4 text-pretty">{project.description}</p>
+                <h3 class="text-base sm:text-lg font-semibold text-yellow-200 mb-2">{project.title}</h3>
+                <p class="text-base sm:text-lg mb-4 text-pretty">{project.description}</p>
                 {project.imgs ? (
                     <Carrousel imgs={project.imgs}></Carrousel>
                 ) : (
-                    <img class="rounded w-auto h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
+                    <img class="rounded w-full h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
                 )}
                 <Tab class="place-items-center"
                     id={project.id}
@@ -208,3 +207,5 @@ const PROJECTS = [
         ))}
     </div>
 </section>
+
+

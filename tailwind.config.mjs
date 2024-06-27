@@ -4,7 +4,13 @@ export default {
 		'./node_modules/flowbite/**/*.js'
 	],
 	theme: {
-		extend: {},
+		extend: {
+			screens: {
+				'sm': '640px', //Mobile
+				'md': '768px', //Tablet
+				'xl': '1280px' //Monitores grandes
+			}
+		},
 	},
 	plugins: [
 		require('flowbite/plugin')

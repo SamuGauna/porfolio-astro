@@ -1,17 +1,12 @@
----
-import Badge from "./utils/Badge.astro";
----
-<div  id="top" class="flex items-center w-full mx-auto lg:w-[700px] mt-10">
-    <section class="flex flex-row items-center">
-        <section class="m-10 w-30 h-30 flex-shrink-0"> <!-- Mantén el tamaño fijo y añade flex-shrink-0 para evitar que la imagen se haga más pequeña -->
-            <img class="rounded-full w-full h-full object-cover" src="/public/perfil.png" alt="image description perfil">
+<div id="top" class="flex items-center w-full mx-auto lg:w-[700px] mt-10 px-4 sm:px-6 xl:px-12">
+    <section class="flex flex-col sm:flex-row items-center">
+        <section class="m-10 w-30 h-30 sm:w-40 sm:h-40 flex-shrink-0">
+            <img class="rounded-full w-full h-full object-cover" src="/public/perfil.png" alt="profile_pic">
         </section>
-        <main class="ml-4 w-auto"> <!-- Añade un margen izquierdo para separar la imagen del contenido principal -->
-            <h1 class="text-white text-5xl font-bold pb-4">¡Hola!, Soy Samu</h1>
-            <h2 class="text-xl ml-16 mt-2 mb-2">{`< Back end Developer & QA />`}</h2>
-            <p class=" text-gray-500 text-center mt-8">En mi segundo año de experiencia laboral, +3 programando. De Mendoza, Argentina. Siempre sacando oportunidades de los problemas y divirtiéndome en el camino a ser un líder de equipo!.</p>
+        <main class="mt-4 sm:ml-6"> <!-- Añade un margen arriba en pantallas pequeñas y margen izquierdo en pantallas medianas y grandes -->
+            <h1 class="text-white text-4xl sm:text-5xl font-bold pb-2 sm:pb-4 whitespace-nowrap">¡Hola!, Soy Samu</h1>
+            <h2 class="text-lg sm:text-xl mt-2 mb-2 sm:ml-8">{'< Back end Developer & QA />'}</h2>
+            <p class="text-gray-500 mt-4 sm:mt-8">En mi segundo año de experiencia laboral, +3 programando. De Mendoza, Argentina. Siempre sacando oportunidades de los problemas y divirtiéndome en el camino a ser un líder de equipo!.</p>
         </main>
     </section>
 </div>
-
-

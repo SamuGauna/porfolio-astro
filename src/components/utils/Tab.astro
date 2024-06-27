@@ -4,10 +4,9 @@ import ViewCode from "./ViewCode.astro";
 
 const {id, tecnologias, contribuciones, observaciones, rol, github, link } = Astro.props;
 ---
-
 <section>
-    <div class="mb-4 mt-2  border-gray-200 dark:border-gray-700">
-        <ul class="flex flex-wrap place-content-around -mb-px text-sm font-medium text-center" id={`default-styled-tab-${id}`} data-tabs-toggle={`#default-styled-tab-content-${id}`} data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500" data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300" role="tablist">
+    <div class="mb-4 mt-2 border-gray-200 dark:border-gray-700">
+        <ul class="flex flex-wrap place-content-around -mb-px text-sm sm:text-base md:text-lg font-medium text-center" id={`default-styled-tab-${id}`} data-tabs-toggle={`#default-styled-tab-content-${id}`} data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500" data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300" role="tablist">
             <li role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id={`contacts-styled-tab-${id}`} data-tabs-target={`#styled-contacts-${id}`} type="button" role="tab" aria-controls={`contacts-${id}`} aria-selected="false">Mi rol</button>
             </li>
@@ -24,7 +23,7 @@ const {id, tecnologias, contribuciones, observaciones, rol, github, link } = Ast
     </div>
     <div id={`default-styled-tab-content-${id}`}>
         <div class="flex flex-row place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-profile-${id}`} role="tabpanel" aria-labelledby={`profile-styled-tab-${id}`}>
-            <p class="text-sm text-gray-500 dark:text-gray-400">
+            <p class="text-sm sm:text-base md:text-lg text-gray-500 dark:text-gray-400">
                 {tecnologias && tecnologias.length > 0 ? (
                     tecnologias.map((Tecnologia, index) => (
                         <Tecnologia key={index} />
@@ -35,7 +34,7 @@ const {id, tecnologias, contribuciones, observaciones, rol, github, link } = Ast
             </p>
         </div>
         <div class="hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-dashboard-${id}`} role="tabpanel" aria-labelledby={`dashboard-styled-tab-${id}`}>
-            <ul class="text-sm text-gray-500 dark:text-gray-400 list-disc ml-5">
+            <ul class="text-sm sm:text-base md:text-lg text-gray-500 dark:text-gray-400 list-disc ml-5">
                 {Array.isArray(contribuciones) ? contribuciones.map((func, index) => (
                     <li class="my-2">{func}</li>
                 )) : (
@@ -44,7 +43,7 @@ const {id, tecnologias, contribuciones, observaciones, rol, github, link } = Ast
             </ul>
         </div>
         <div class="hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-settings-${id}`} role="tabpanel" aria-labelledby={`settings-styled-tab-${id}`}>
-            <ul class="text-sm text-gray-500 dark:text-gray-400 ml-5">
+            <ul class="text-sm sm:text-base md:text-lg text-gray-500 dark:text-gray-400 ml-5">
                 {Array.isArray(observaciones) ? observaciones.map((func, index) => (
                     <li class="my-2">{func}</li>
                 )) : (
@@ -55,7 +54,7 @@ const {id, tecnologias, contribuciones, observaciones, rol, github, link } = Ast
             {link && <MoreInfo link={link}/>}
         </div>
         <div class="hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id={`styled-contacts-${id}`} role="tabpanel" aria-labelledby={`contacts-styled-tab-${id}`}>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{rol}</p>
+            <p class="text-sm sm:text-base md:text-lg text-gray-500 dark:text-gray-400">{rol}</p>
         </div>
     </div>
 </section>
