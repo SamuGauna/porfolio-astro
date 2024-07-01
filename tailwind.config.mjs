@@ -6,6 +6,8 @@ export default {
 	theme: {
 		extend: {
 			screens: {
+				'xss': '320px',
+				'xs': '480px',
 				'sm': '640px', //Mobile
 				'md': '768px', //Tablet
 				'xl': '1280px' //Monitores grandes
