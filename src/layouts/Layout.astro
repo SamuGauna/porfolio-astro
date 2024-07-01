@@ -11,9 +11,7 @@ import Experience from '../components/Experience.astro';
 import Footer from '../components/Footer.astro';
 import Projects from '../components/projects/Projects.astro';
 import ProjectsTesting from '../components/projects/ProjectsTesting.astro';
-import SkillTech from '../components/SkillTech.astro';
-import Habilidades from '../components/Habilidades.astro';
-import Test from '../components/Test.astro'
+import Skills from '../components/Skills.astro'
 import ThanksCard from '../components/ThanksCard.astro';
 ---
 <!doctype html>
@@ -21,16 +19,16 @@ import ThanksCard from '../components/ThanksCard.astro';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Porfolio Samuel Gauna - Desarrollador y Programador Web</title>
 	</head>
-	<body class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
+	<body class="relative top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
 		<Header/>
 		<Presentacion></Presentacion>
 		<Contacto></Contacto>
-		<Test></Test>
+		<Skills></Skills>
 		<Experience ></Experience>
 		<Projects></Projects>
 		<ProjectsTesting></ProjectsTesting>
@@ -55,25 +53,5 @@ import ThanksCard from '../components/ThanksCard.astro';
         color: aliceblue;
         display: flex;
         flex-direction: column;
-        /* background-image: radial-gradient(70vw 70vh at 40% 50%, #000 50%, #63e 100%); */
-    }
-	@media (max-width: 640px) {
-        html {
-			width: 100vw;
-            background-image: radial-gradient(80vw 80vh at 40% 50%, #000 50%, #63e 100%);
-            background-size: 100vw 100vh; /* Ajuste para cubrir toda la pantalla */
-        }
-    }
-    /* Ajustes específicos para tamaños pequeños */
-    @media (max-width: 768px) {
-        html {
-            background-image: radial-gradient(70vw 70vh at 40% 50%, #000 50%, #63e 100%);
-        }
-    }
-    /* Ajustes específicos para tablets */
-    @media (max-width: 1024px) {
-        html {
-            background-image: radial-gradient(80vw 80vh at 40% 50%, #000 10%, #63e 100%);
-        }
     }
 </style>
