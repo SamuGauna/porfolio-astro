@@ -4,7 +4,7 @@ interface Props {
 }
 import '@fontsource-variable/onest';
 
-import Header from '../components/Header.astro'
+import Header from '../components/Header.astro';
 import Contacto from '../components/Contacto.astro';
 import Presentacion from '../components/Presentacion.astro';
 import Experience from '../components/Experience.astro';
@@ -25,7 +25,7 @@ import ThanksCard from '../components/ThanksCard.astro';
 		<title>Porfolio Samuel Gauna - Desarrollador y Programador Web</title>
 	</head>
 	<body class="relative top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
-		<Header/>
+		<Header></Header>
 		<Presentacion></Presentacion>
 		<Contacto></Contacto>
 		<Skills></Skills>
@@ -45,7 +45,6 @@ import ThanksCard from '../components/ThanksCard.astro';
     html {
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
         font-family: 'Onest Variable', system-ui, sans-serif;
         scroll-behavior: smooth;
         width: 100%;
