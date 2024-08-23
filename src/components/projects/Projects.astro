@@ -1,211 +1,276 @@
 ---
-import Code from "../icons/Code.astro"
-import Node from "../icons/Node.astro"
-import Express from "../icons/Express.astro"
-import Prisma from "../icons/Prisma.astro"
-import PlanetScale from "../icons/PlanetScale.astro"
-import Carrousel from "../utils/Carrousel.astro"
-import Tab from "../utils/Tab.astro"
-import Js from "../icons/Js.astro"
-import Swagger from "../icons/Swagger.astro"
-import Postman from "../icons/Postman.astro"
-import Jest from "../icons/Jest.astro"
-import Python from "../icons/Python.astro"
-import FastAPI from "../icons/FastAPI.astro"
-import SocketIo from "../icons/SocketIo.astro"
-import Redis from "../icons/Redis.astro"
-import Cluster from "../icons/Cluster.astro"
-import Handlebars from "../icons/Handlebars.astro"
-import Sequelize from "../icons/Sequelize.astro"
-import MySQL from "../icons/MySQL.astro"
-import JWT from "../icons/JWT.astro"
-import Selenium from "../icons/Selenium.astro"
-import Flask from "../icons/Flask.astro"
-import BeatifulSoup from "../icons/BeatifulSoup.astro"
-import Pandas from "../icons/Pandas.astro"
-import Numpy from "../icons/Numpy.astro"
-import AWS from "../icons/AWS.astro"
-import Pytest from "../icons/Pytest.astro"
-import Mongo from "../icons/Mongo.astro"
+import Code from "../icons/Code.astro";
+import Node from "../icons/Node.astro";
+import Express from "../icons/Express.astro";
+import Prisma from "../icons/Prisma.astro";
+import PlanetScale from "../icons/PlanetScale.astro";
+import Carrousel from "../utils/Carrousel.astro";
+import Tab from "../utils/Tab.astro";
+import Js from "../icons/Js.astro";
+import Swagger from "../icons/Swagger.astro";
+import Postman from "../icons/Postman.astro";
+import Jest from "../icons/Jest.astro";
+import Python from "../icons/Python.astro";
+import FastAPI from "../icons/FastAPI.astro";
+import SocketIo from "../icons/SocketIo.astro";
+import Redis from "../icons/Redis.astro";
+import Cluster from "../icons/Cluster.astro";
+import Handlebars from "../icons/Handlebars.astro";
+import Sequelize from "../icons/Sequelize.astro";
+import MySQL from "../icons/MySQL.astro";
+import JWT from "../icons/JWT.astro";
+import Selenium from "../icons/Selenium.astro";
+import Flask from "../icons/Flask.astro";
+import BeatifulSoup from "../icons/BeatifulSoup.astro";
+import Pandas from "../icons/Pandas.astro";
+import Numpy from "../icons/Numpy.astro";
+import AWS from "../icons/AWS.astro";
+import Pytest from "../icons/Pytest.astro";
+import Mongo from "../icons/Mongo.astro";
+import NEST from "../icons/NEST.astro";
+import Ts from "../icons/Ts.astro";
 const PROJECTS = [
-    {
-        id: 1,
-        title: "Backend de Appify",
-        description: "Appify es una plataforma integral diseñada para la gestión financiera y administrativa, permitiendo a usuarios y empresas controlar sus finanzas, gestionar productos y servicios, y administrar relaciones con clientes y proveedores. La plataforma soporta múltiples usuarios, con configuraciones avanzadas para facturación y pagos.",
-        link: "https://appify.cl/",
-        img: '/projectsimg/appify.webp',
-        tags: [Node, Express, Prisma, PlanetScale, Js, Swagger, Postman, Jest],
-        contribuciones: [
-            "Diseño de Arquitectura: Implementación de una arquitectura basada en el patrón MVC (Modelo-Vista-Controlador) para mantener un código limpio, modular y fácil de mantener.",
-            "Desarrollo de la Capa de Datos: Uso de Prisma como ORM para la interacción con la base de datos MySQL, asegurando operaciones eficientes y seguras.",
-            "Lógica de Negocio: Implementación de la lógica de negocio en la capa de servicios, asegurando que las operaciones de datos y las reglas de negocio se ejecuten correctamente.",
-            "Controladores y Rutas: Desarrollo de controladores para manejar las rutas de la API REST, gestionando las solicitudes HTTP, respuestas y manejo de errores.",
-            "Integraciones Externas: Consumo de servicios externos mediante API REST, incluyendo la API de facturación electrónica y la integración con la pasarela de pagos de Mercado Pago.",
-            "Autenticación y Autorización: Implementación de JWT para autenticar y autorizar usuarios, asegurando que solo usuarios legítimos puedan acceder a los recursos.",
-            "Manejo de Errores y Middleware: Creación de manejadores de errores personalizados y middleware para validaciones, autenticación y otras funcionalidades comunes."
-        ],
-        obs: [
-            "Durante el desarrollo de Appify, me encontré con varios desafíos ",
-            "- Manejo de Usuarios: Fue mi primera vez trabajando en un sistema con tantos usuarios. Implementé técnicas de optimización y escalabilidad para asegurar que la plataforma pudiera manejar picos de tráfico sin problemas.",
-            "- Integración Fiscal: La integración del flujo de facturación fue compleja debido a las normativas contables chilenas y la relación con el sistema de impuestos internos. Investigué a fondo y consulté con colegas más experimentados para asegurar la conformidad y precisión.",
-            "- Seguridad de Datos: Asegurar la seguridad de los datos sensibles fue crucial. Implementé prácticas de seguridad y realicé pruebas exhaustivas para detectar y corregir vulnerabilidades potenciales.",
-            "Para superar estos desafíos, hice mucha investigación intensiva y me apoyé en el conocimiento diverso de mi equipo. Consulté con devs sr y expertos en contabilidad para guiar mis decisiones. Además, implementé muchas pruebas de testing para garantizar la calidad y la confiabilidad del software."
-        ],
-        rol: "Como desarrollador backend en el proyecto Appify, participé en el diseño e implementación de la arquitectura del sistema, siguiendo un modelo estructurado de tres capas: Repository, Service y Controller. Trabajé junto a un compañero para desarrollar funcionalidades clave y asegurar la integración fluida de servicios externos."
-    },
-    {
-        id: 2,
-        title: "API de facturación",
-        description: "Es una API creada para la emisión de documentos fiscales, generación de XMLs, generación de PDF y administración de usuarios autorizados a facturar.",
-        link: "https://appify-fas-api.vercel.app/docs",
-        img: '/projectsimg/fastapidte.webp',
-        tags: [Python, FastAPI, Swagger, PlanetScale],
-        contribuciones: [
-        "Diseño e Implementación de Endpoints: Creación de endpoints RESTful para la emisión y administración de documentos fiscales, incluyendo la generación de XML y PDF.",
-        "Integración con Bases de Datos: Uso de PlanetScale para interactuar con la base de datos MySQL.",
-        "Documentación de la API: Creación de documentación interactiva utilizando Swagger, facilitando a mis compañeros la comprensión y uso de la API.",
-        ],
-        obs: [
-        "Durante el desarrollo de la API de facturación, enfrenté desafíos:",
-            "- Validación de Documentos Fiscales: Implementar reglas complejas para la validación de documentos fiscales y asegurar la conformidad con las normativas vigentes.",
-            "- Esta API es intermediaria entre un servicio de Software llamado LIBRE DTE y Appify, reajustar esta API, para que funcionen en conjunto fue realmente un desafio.",
-            "Para superar esto, realicé una investigación bastante extensa sobre las normativas fiscales del sistema chileno y utilicé herramientas de monitoreo y pruebas de carga para asegurar el rendimiento y la seguridad de la API. "
-        ],
-        rol : "Tuve que desarrollar esta API, para gestionar la administracion de clientes y su facturación. Puse en práctica la Arquitectura de Microservicios y su comunicación, es algo sumamente complicado, pero ya estaba muy familiarizado con la mayoria de conceptos y me fue esencial para este tipo de proyecto. Se realizo en FastAPI ya que facilitaba la documentacion de una manera rapida y se requeria de poco tiempo para su desarrollo."
-    },
-    {
-        id: 3,
-        title: "Microservicio de WebSocket para notificaciones en tiempo real",
-        description: "Este proyecto consiste en un microservicio para la recepción y envío de datos en tiempo real a un Front-end, notificando a todos los usuarios conectados. El microservicio es capaz de manejar múltiples procesos utilizando cluster, garantizando así una alta disponibilidad y escalabilidad.",
-        github: "https://github.com/samugauna7job/socket_simple_for_Appify.git",
-        link: "/projectsimg/socket-diagram.svg",
-        img: "/projectsimg/code_socket.webp",
-        tags: [Express, Node, SocketIo, Redis, Cluster, AWS],  
-        rol: "Este proyecto toco desarrollarlo rapido y simple, ya que no constaba de mucha complejidad, lo que nunca habia realizado y realize en este proyecto fue el escalamiento horizontal, aplique Redis y Cluster, aunque el servicio utilizado para el despliegue(Amazon Lighsail) ya venia con estas caracteristicas.",
-        contribuciones: [
-            "Diseño e implementacion del código del socket",
-            "Realización del despliegue en Amazon Web Service",
-            "Implementación de Redis para el adaptador de socket",
-            "Implementación de Cluster para el escalado horizontal",
-            "Realización de pruebas de performance de rendimiento y escalabilidad"
-        ],
-        obs: [
-            "Durante el desarrollo de este proyecto no enfrente situaciones complejas, lo unico que considere nuevo, fue la implementacion del lado del front y la union a su respectiva sala.",
-            "Tuve que realizar tambien un codigo de prueba del lado del front para los test y para posterior mis compañeros vean la forma en la que se implementa en el front.",
-            "Fue un reto lo de aplicar Redis para la comunicación entre instancias, no lo había usado nunca y mas que la implementación, conceptualmente investigue mucho y me lleve una gran sorpresa con ese concepto."
-        ]
-    },
-    {
-        id: 4,
-        title: "Aplicación web de gestión interna",
-        description: "Este proyecto consistió en el desarrollo de una plataforma integral de gestión interna destinada a recopilar y organizar información de clientes a través de técnicas de scraping y consumo de APIs. La finalidad principal era facilitar a los vendedores el acceso a datos relevantes sobre clientes y sus empresas, optimizando así el proceso de ventas.",
-        imgs: [
-            '/projectsimg/scraping/scraping1.webp',
-            '/projectsimg/scraping/scraping2.webp',
-            '/projectsimg/scraping/scaping3.webp',
-            '/projectsimg/scraping/scraping4.webp',
-        ],
-        tags: [Node, Jest, Handlebars, Sequelize, Js, MySQL, Selenium, JWT, Express],  
-        rol: "Como esta es una arquitectura monolítica, en este proyecto estuve encargado de varios aspectos. Trabaje con un compañero y nos asignabamos las tareas de acuerdo a la complejidad y a la familiarización de conceptos. Estuve tanto en el Front como en el Back y tambien con una participacion importante en el lado del deploy en VPS Hostinguer.",
-        contribuciones: [
-        "Desarrollé el código de scraping evitando multiples alertas bloqueantes, tomando screenshots y recopilando datos", 
-        "Realize el renderizado de la información capturada con Handlebars.",
-        "Realize la refactorización del código, ajustandolo para que las futuras implementaciones no sean complejas de realizar, para su facíl entendimiento y evitar la repetición de código innecesaria.",
-        "Realice la arquitectura del sistema de backend, basandome en un modelo MVC.",
-        "Establecí las relaciones del ORM de los respectivos Modelos",
-        "Realice pruebas unitarias sobre la info recibida del scraping",
-        "Estuve encargado del deploy en multiples etapas del proyecto, utilizando el servicio VPS de Hostinguer"
-        ],
-        obs: [
-            "En este proyecto, lo que realmente fue un reto fue realizar un despliegue con un sistema de scraping. Al utilizar un navegador para la recopilación de datos, tuve muchas dificultades para entender conceptualmente cómo funciona el servidor y cómo hacer que el scraping funcione en un servidor.",
-            "Al no tener navegador en el servidor, no funcionaba. Entonces procedí a investigar bastante, ya que hay pocos tutoriales e información sobre este tema, y descubrí que, con el driver del navegador correspondiente al sistema operativo y a la versión del navegador, podía realizar correctamente la función del scraping.",
-            "Fue un camino bastante frustrante al principio, pero la satisfacción cuando se logró fue espectacular."
-        ]
-    },
-    {
-        id: 5,
-        title: "API de Scraping de Datos Tributarios",
-        description: "La API está diseñada para realizar scraping de datos tributarios del sistema de impuestos internos, obteniendo asi, informes completos sobre formularios, proporcionando una manera eficiente y automatizada de obtener esta información a través de varios endpoints seguros.",
-        github: "https://github.com/samugauna7job/api-multi-scrap.git",
-        img: '/projectsimg/multi-scraping.webp',
-        tags: [Flask, Python, Selenium, BeatifulSoup, Pandas, Pytest ],
-        rol: ["Este proyecto fue por decision propia, ante multiples requerimientos de datos de diferentes personas en la empresa. Opte por automatizar este proceso, la realización de una API con un pequeño Form para que se obtengan los datos de diferentes formularios. ",
-            "Estos codigos de scraping ya estaban desarrollados por mi, solo tuve que hacer una api para que las diferentes porciones de código actuaran en conjunto, para la facilidad de la persona solicitante de estos datos."
-        ],
-        contribuciones: [
-            "Estructuración de un backend bastante simple, con solo 4 endpoints, pero la info retornada por estos es bastante robusta.",
-            "Un pequeño formulario de ingreso de usuario y password para su posterior recopilación de datos.",
-            "Desarrollé el código de scraping para obtener los datos de los formularios.",
-            "Realice la refactorización del código, ajustandolo para que las futuras implementaciones.",
-            "Realice pruebas unitarias sobre la info recibida del scraping."
-        ],
-        obs : [
-            "Este proyecto no me trajo mayores complicaciones, fue una automatización bastante óptima para los contadores y legales de la empresa ya que con solo dos datos, podian obtener en segundos informes completos sobre la situacion tributaria del cliente."
-        ]
-    },
-    {
-        id: 6,
-        title: "Recopilador Automático de Datos y Exportación a Excel",
-        description: "Este recopilador masivo de datos automatiza el proceso de obtención y organización de información fiscal, mejorando la eficiencia y precisión en el manejo de grandes volúmenes de datos del SII, y facilitando la generación de reportes detallados para análisis financiero y contable.",
-        github: "https://github.com/samugauna7job/api-multi-scrap.git",
-        img: '/projectsimg/localData.webp',
-        tags: [Numpy, Python, BeatifulSoup, Pandas, Selenium],  
-        rol: ["Desarrolle un scraping capaz de capturar diferentes tipos de datos tributarios, leer la información de clientes en un excel y re escribir este mismo con los datos solicitados de cada cliente."],
-        contribuciones: ["Desarrollo de un código perceptible a errores y alertas bloqueantes.",
-            "Manejo de hilos de trabajo y partición del trabajo.",
-            "Monitorización de la maquina a utilizar, para captar fallos o posibles errores en la captura de datos.",
-            "Realizacion de back ups para posible perdida de datos."
-        ],
-        obs : ["Este es unos de los primeros proyectos que afronte en la empresa Mi asesor.cl, habia una cantidad de casi 1000 clientes en un excel, y se necesitaban algunos datos tributarios.",
-            "Este código se ejecuta de manera local, ya que no hacía falta realizar un deploy, era una necesidad instantanea y dependiendo de la información a recolectar, este código se modificaba de acuerdo a esto mismo.",
-            "Este código recorre mas de 1000 clientes, en diferentes hilos de trabajos simultaneamente, acortando el tiempo de recolección de información y re escribiendo este excel con múltiples datos."
-        ]
-    },
-    {
-        id: 7,
-        title: "Plataforma de Ecommerce Monolítica Completa",
-        description: "Este proyecto es una plataforma de ecommerce monolítica desarrollada utilizando tecnologías modernas tanto en el backend como en el frontend. El sistema está diseñado para ser completamente funcional, incluyendo todas las características esenciales necesarias para operar una tienda en línea, desde la gestión de usuarios y productos hasta el procesamiento de pedidos y autenticación segura.",
-        github: "https://github.com/SamuGauna/ecommerceBack.git",
+  {
+    id: 1,
+    title: "Backend de Rifa Club",
+    description:
+      "Rifa Club es una comunidad que ofrece beneficios exclusivos como sorteos, descuentos y acceso a contenido especial para sus suscriptores. En este proyecto, me encargué de desarrollar el backend, enfocándome en manejar suscripciones, pagos y la gestión de datos de los usuarios. El sistema se basa en tres colecciones principales: planes, usuarios y pagos, lo que permite administrar todo lo relacionado con los suscriptores de manera eficiente.",
+    link: "https://rifaclub.com/",
+    imgs: [
+      "/projectsimg/rifaclub/rifa_club1.webp",
+      "/projectsimg/rifaclub/rifa_club2.webp",
+      "/projectsimg/rifaclub/rifa_club3.webp",
+    ],
+    tags: [Node, NEST, Ts, Mongo, Swagger, Postman, Jest],
+    contribuciones: [
+      "Diseño de Arquitectura: Implementación de una arquitectura basada en el patrón MVC utilizando NestJS, asegurando un diseño modular y fácil de mantener.",
+      "Desarrollo de la Capa de Datos: Utilización de Typegoose para interactuar directamente con la base de datos MongoDB, optimizando la gestión de datos sin necesidad de un ORM tradicional.",
+      "Lógica de Negocio: Implementación de la lógica compleja para el manejo de pagos mediante la API de Mercado Pago, resolviendo desafíos relacionados con la documentación y el manejo de estados de pago.",
+      "Controladores y Rutas: Desarrollo de controladores con guards y DTOs para asegurar la seguridad y eficiencia en el manejo de consultas y datos, utilizando JWT para la autenticación de usuarios.",
+      "Integraciones Internas: Integración de servicios como SendGrid y Mailtrap para el envío de correos, y utilización de JWT para la autenticación, Day.js para el manejo de fechas, y Bcrypt para la seguridad de contraseñas.",
+      "Autenticación y Autorización: Implementación de JWT para autenticar y autorizar usuarios, garantizando el acceso adecuado a los recursos de la plataforma.",
+      "Manejo de Errores y Middleware: Creación de una clase manejadora de errores global para evitar la exposición de información sensible y garantizar una gestión de errores robusta.",
+    ],
+    obs: [
+      "Durante el desarrollo de Rifa, me encontré con varios desafíos ",
+      "- Migración de Usuarios: Fue un desafío significativo en la migración de usuarios con suscripciones existentes en Mercado Pago, incluyendo la transferencia de datos de pago a nuestra base de datos.",
+      "- Integración con Mercado Pago: Enfrenté dificultades con la documentación poco clara de la API de Mercado Pago y el manejo de webhooks y estados de pago.",
+    ],
+    rol: "Como desarrollador backend en Rifa Club, trabajé en estrecha colaboración con un compañero para desarrollar e implementar la arquitectura del sistema basada en MVC. Colaboré en la integración de servicios internos y en la resolución de desafíos técnicos, bajo la supervisión de nuestro CTO (developer senior), para asegurar la calidad y efectividad del backend.",
+  },
+  {
+    id: 2,
+    title: "Backend de Appify",
+    description:
+      "Appify es una plataforma integral diseñada para la gestión financiera y administrativa, permitiendo a usuarios y empresas controlar sus finanzas, gestionar productos y servicios, y administrar relaciones con clientes y proveedores. La plataforma soporta múltiples usuarios, con configuraciones avanzadas para facturación y pagos.",
+    link: "https://appify.cl/",
+    img: "/projectsimg/appify.webp",
+    tags: [Node, Express, Prisma, PlanetScale, Js, Swagger, Postman, Jest],
+    contribuciones: [
+      "Diseño de Arquitectura: Implementación de una arquitectura basada en el patrón MVC (Modelo-Vista-Controlador) para mantener un código limpio, modular y fácil de mantener.",
+      "Desarrollo de la Capa de Datos: Uso de Prisma como ORM para la interacción con la base de datos MySQL, asegurando operaciones eficientes y seguras.",
+      "Lógica de Negocio: Implementación de la lógica de negocio en la capa de servicios, asegurando que las operaciones de datos y las reglas de negocio se ejecuten correctamente.",
+      "Controladores y Rutas: Desarrollo de controladores para manejar las rutas de la API REST, gestionando las solicitudes HTTP, respuestas y manejo de errores.",
+      "Integraciones Externas: Consumo de servicios externos mediante API REST, incluyendo la API de facturación electrónica y la integración con la pasarela de pagos de Mercado Pago.",
+      "Autenticación y Autorización: Implementación de JWT para autenticar y autorizar usuarios, asegurando que solo usuarios legítimos puedan acceder a los recursos.",
+      "Manejo de Errores y Middleware: Creación de manejadores de errores personalizados y middleware para validaciones, autenticación y otras funcionalidades comunes.",
+    ],
+    obs: [
+      "Durante el desarrollo de Appify, me encontré con varios desafíos ",
+      "- Manejo de Usuarios: Fue mi primera vez trabajando en un sistema con tantos usuarios. Implementé técnicas de optimización y escalabilidad para asegurar que la plataforma pudiera manejar picos de tráfico sin problemas.",
+      "- Integración Fiscal: La integración del flujo de facturación fue compleja debido a las normativas contables chilenas y la relación con el sistema de impuestos internos. Investigué a fondo y consulté con colegas más experimentados para asegurar la conformidad y precisión.",
+      "- Seguridad de Datos: Asegurar la seguridad de los datos sensibles fue crucial. Implementé prácticas de seguridad y realicé pruebas exhaustivas para detectar y corregir vulnerabilidades potenciales.",
+      "Para superar estos desafíos, hice mucha investigación intensiva y me apoyé en el conocimiento diverso de mi equipo. Consulté con devs sr y expertos en contabilidad para guiar mis decisiones. Además, implementé muchas pruebas de testing para garantizar la calidad y la confiabilidad del software.",
+    ],
+    rol: "Como desarrollador backend en el proyecto Appify, participé en el diseño e implementación de la arquitectura del sistema, siguiendo un modelo estructurado de tres capas: Repository, Service y Controller. Trabajé junto a un compañero para desarrollar funcionalidades clave y asegurar la integración fluida de servicios externos.",
+  },
+  {
+    id: 3,
+    title: "API de facturación",
+    description:
+      "Es una API creada para la emisión de documentos fiscales, generación de XMLs, generación de PDF y administración de usuarios autorizados a facturar.",
+    link: "https://appify-fas-api.vercel.app/docs",
+    img: "/projectsimg/fastapidte.webp",
+    tags: [Python, FastAPI, Swagger, PlanetScale],
+    contribuciones: [
+      "Diseño e Implementación de Endpoints: Creación de endpoints RESTful para la emisión y administración de documentos fiscales, incluyendo la generación de XML y PDF.",
+      "Integración con Bases de Datos: Uso de PlanetScale para interactuar con la base de datos MySQL.",
+      "Documentación de la API: Creación de documentación interactiva utilizando Swagger, facilitando a mis compañeros la comprensión y uso de la API.",
+    ],
+    obs: [
+      "Durante el desarrollo de la API de facturación, enfrenté desafíos:",
+      "- Validación de Documentos Fiscales: Implementar reglas complejas para la validación de documentos fiscales y asegurar la conformidad con las normativas vigentes.",
+      "- Esta API es intermediaria entre un servicio de Software llamado LIBRE DTE y Appify, reajustar esta API, para que funcionen en conjunto fue realmente un desafio.",
+      "Para superar esto, realicé una investigación bastante extensa sobre las normativas fiscales del sistema chileno y utilicé herramientas de monitoreo y pruebas de carga para asegurar el rendimiento y la seguridad de la API. ",
+    ],
+    rol: "Tuve que desarrollar esta API, para gestionar la administracion de clientes y su facturación. Puse en práctica la Arquitectura de Microservicios y su comunicación, es algo sumamente complicado, pero ya estaba muy familiarizado con la mayoria de conceptos y me fue esencial para este tipo de proyecto. Se realizo en FastAPI ya que facilitaba la documentacion de una manera rapida y se requeria de poco tiempo para su desarrollo.",
+  },
+  {
+    id: 4,
+    title: "Microservicio de WebSocket para notificaciones en tiempo real",
+    description:
+      "Este proyecto consiste en un microservicio para la recepción y envío de datos en tiempo real a un Front-end, notificando a todos los usuarios conectados. El microservicio es capaz de manejar múltiples procesos utilizando cluster, garantizando así una alta disponibilidad y escalabilidad.",
+    github: "https://github.com/samugauna7job/socket_simple_for_Appify.git",
+    link: "/projectsimg/socket-diagram.svg",
+    img: "/projectsimg/code_socket.webp",
+    tags: [Express, Node, SocketIo, Redis, Cluster, AWS],
+    rol: "Este proyecto toco desarrollarlo rapido y simple, ya que no constaba de mucha complejidad, lo que nunca habia realizado y realize en este proyecto fue el escalamiento horizontal, aplique Redis y Cluster, aunque el servicio utilizado para el despliegue(Amazon Lighsail) ya venia con estas caracteristicas.",
+    contribuciones: [
+      "Diseño e implementacion del código del socket",
+      "Realización del despliegue en Amazon Web Service",
+      "Implementación de Redis para el adaptador de socket",
+      "Implementación de Cluster para el escalado horizontal",
+      "Realización de pruebas de performance de rendimiento y escalabilidad",
+    ],
+    obs: [
+      "Durante el desarrollo de este proyecto no enfrente situaciones complejas, lo unico que considere nuevo, fue la implementacion del lado del front y la union a su respectiva sala.",
+      "Tuve que realizar tambien un codigo de prueba del lado del front para los test y para posterior mis compañeros vean la forma en la que se implementa en el front.",
+      "Fue un reto lo de aplicar Redis para la comunicación entre instancias, no lo había usado nunca y mas que la implementación, conceptualmente investigue mucho y me lleve una gran sorpresa con ese concepto.",
+    ],
+  },
+  {
+    id: 5,
+    title: "Aplicación web de gestión interna",
+    description:
+      "Este proyecto consistió en el desarrollo de una plataforma integral de gestión interna destinada a recopilar y organizar información de clientes a través de técnicas de scraping y consumo de APIs. La finalidad principal era facilitar a los vendedores el acceso a datos relevantes sobre clientes y sus empresas, optimizando así el proceso de ventas.",
+    imgs: [
+      "/projectsimg/scraping/scraping1.webp",
+      "/projectsimg/scraping/scraping2.webp",
+      "/projectsimg/scraping/scaping3.webp",
+      "/projectsimg/scraping/scraping4.webp",
+    ],
+    tags: [
+      Node,
+      Jest,
+      Handlebars,
+      Sequelize,
+      Js,
+      MySQL,
+      Selenium,
+      JWT,
+      Express,
+    ],
+    rol: "Como esta es una arquitectura monolítica, en este proyecto estuve encargado de varios aspectos. Trabaje con un compañero y nos asignabamos las tareas de acuerdo a la complejidad y a la familiarización de conceptos. Estuve tanto en el Front como en el Back y tambien con una participacion importante en el lado del deploy en VPS Hostinguer.",
+    contribuciones: [
+      "Desarrollé el código de scraping evitando multiples alertas bloqueantes, tomando screenshots y recopilando datos",
+      "Realize el renderizado de la información capturada con Handlebars.",
+      "Realize la refactorización del código, ajustandolo para que las futuras implementaciones no sean complejas de realizar, para su facíl entendimiento y evitar la repetición de código innecesaria.",
+      "Realice la arquitectura del sistema de backend, basandome en un modelo MVC.",
+      "Establecí las relaciones del ORM de los respectivos Modelos",
+      "Realice pruebas unitarias sobre la info recibida del scraping",
+      "Estuve encargado del deploy en multiples etapas del proyecto, utilizando el servicio VPS de Hostinguer",
+    ],
+    obs: [
+      "En este proyecto, lo que realmente fue un reto fue realizar un despliegue con un sistema de scraping. Al utilizar un navegador para la recopilación de datos, tuve muchas dificultades para entender conceptualmente cómo funciona el servidor y cómo hacer que el scraping funcione en un servidor.",
+      "Al no tener navegador en el servidor, no funcionaba. Entonces procedí a investigar bastante, ya que hay pocos tutoriales e información sobre este tema, y descubrí que, con el driver del navegador correspondiente al sistema operativo y a la versión del navegador, podía realizar correctamente la función del scraping.",
+      "Fue un camino bastante frustrante al principio, pero la satisfacción cuando se logró fue espectacular.",
+    ],
+  },
+  {
+    id: 6,
+    title: "API de Scraping de Datos Tributarios",
+    description:
+      "La API está diseñada para realizar scraping de datos tributarios del sistema de impuestos internos, obteniendo asi, informes completos sobre formularios, proporcionando una manera eficiente y automatizada de obtener esta información a través de varios endpoints seguros.",
+    github: "https://github.com/samugauna7job/api-multi-scrap.git",
+    img: "/projectsimg/multi-scraping.webp",
+    tags: [Flask, Python, Selenium, BeatifulSoup, Pandas, Pytest],
+    rol: [
+      "Este proyecto fue por decision propia, ante multiples requerimientos de datos de diferentes personas en la empresa. Opte por automatizar este proceso, la realización de una API con un pequeño Form para que se obtengan los datos de diferentes formularios. ",
+      "Estos codigos de scraping ya estaban desarrollados por mi, solo tuve que hacer una api para que las diferentes porciones de código actuaran en conjunto, para la facilidad de la persona solicitante de estos datos.",
+    ],
+    contribuciones: [
+      "Estructuración de un backend bastante simple, con solo 4 endpoints, pero la info retornada por estos es bastante robusta.",
+      "Un pequeño formulario de ingreso de usuario y password para su posterior recopilación de datos.",
+      "Desarrollé el código de scraping para obtener los datos de los formularios.",
+      "Realice la refactorización del código, ajustandolo para que las futuras implementaciones.",
+      "Realice pruebas unitarias sobre la info recibida del scraping.",
+    ],
+    obs: [
+      "Este proyecto no me trajo mayores complicaciones, fue una automatización bastante óptima para los contadores y legales de la empresa ya que con solo dos datos, podian obtener en segundos informes completos sobre la situacion tributaria del cliente.",
+    ],
+  },
+  {
+    id: 7,
+    title: "Recopilador Automático de Datos y Exportación a Excel",
+    description:
+      "Este recopilador masivo de datos automatiza el proceso de obtención y organización de información fiscal, mejorando la eficiencia y precisión en el manejo de grandes volúmenes de datos del SII, y facilitando la generación de reportes detallados para análisis financiero y contable.",
+    github: "https://github.com/samugauna7job/api-multi-scrap.git",
+    img: "/projectsimg/localData.webp",
+    tags: [Numpy, Python, BeatifulSoup, Pandas, Selenium],
+    rol: [
+      "Desarrolle un scraping capaz de capturar diferentes tipos de datos tributarios, leer la información de clientes en un excel y re escribir este mismo con los datos solicitados de cada cliente.",
+    ],
+    contribuciones: [
+      "Desarrollo de un código perceptible a errores y alertas bloqueantes.",
+      "Manejo de hilos de trabajo y partición del trabajo.",
+      "Monitorización de la maquina a utilizar, para captar fallos o posibles errores en la captura de datos.",
+      "Realizacion de back ups para posible perdida de datos.",
+    ],
+    obs: [
+      "Este es unos de los primeros proyectos que afronte en la empresa Mi asesor.cl, habia una cantidad de casi 1000 clientes en un excel, y se necesitaban algunos datos tributarios.",
+      "Este código se ejecuta de manera local, ya que no hacía falta realizar un deploy, era una necesidad instantanea y dependiendo de la información a recolectar, este código se modificaba de acuerdo a esto mismo.",
+      "Este código recorre mas de 1000 clientes, en diferentes hilos de trabajos simultaneamente, acortando el tiempo de recolección de información y re escribiendo este excel con múltiples datos.",
+    ],
+  },
+  {
+    id: 8,
+    title: "Plataforma de Ecommerce Monolítica Completa",
+    description:
+      "Este proyecto es una plataforma de ecommerce monolítica desarrollada utilizando tecnologías modernas tanto en el backend como en el frontend. El sistema está diseñado para ser completamente funcional, incluyendo todas las características esenciales necesarias para operar una tienda en línea, desde la gestión de usuarios y productos hasta el procesamiento de pedidos y autenticación segura.",
+    github: "https://github.com/SamuGauna/ecommerceBack.git",
 
-        imgs: [
-            '/projectsimg/eco1.webp',
-            '/projectsimg/eco2.webp',
-        ],
-        tags: [SocketIo, Swagger, Node, JWT, Js, Jest, Handlebars, Express, Mongo],  
-        rol: ["Esta aplicación monolitica se realizo a modo de simple y pura práctica, se cubrieron todos los aspectos funcionales de un ecommerce."],
-        contribuciones: ["Desarrollo de una Arquitectura Monolitica",
-        ],
-        obs : ["Este proyecto lo coloque porque para mi, representa uno de mis primeros grandes pasos en el mundo del Backend, este proyecto me ayudo en muchos aspectos y conocimientos que hoy valoro tener, le tengo mucho cariño y al dia de hoy aplico mucho lo que aprendi con este proyecto."]
-    }
-]
+    imgs: ["/projectsimg/eco1.webp", "/projectsimg/eco2.webp"],
+    tags: [SocketIo, Swagger, Node, JWT, Js, Jest, Handlebars, Express, Mongo],
+    rol: [
+      "Esta aplicación monolitica se realizo a modo de simple y pura práctica, se cubrieron todos los aspectos funcionales de un ecommerce.",
+    ],
+    contribuciones: ["Desarrollo de una Arquitectura Monolitica"],
+    obs: [
+      "Este proyecto lo coloque porque para mi, representa uno de mis primeros grandes pasos en el mundo del Backend, este proyecto me ayudo en muchos aspectos y conocimientos que hoy valoro tener, le tengo mucho cariño y al dia de hoy aplico mucho lo que aprendi con este proyecto.",
+    ],
+  },
+];
 ---
-<section id="pro" class="w-full mx-auto lg:max-w-[1000px] pt-10 px-6 sm:px-8 md:px-12 xss:w-5/6 xs:w-7/8">
-    <div class="flex flex-row justify-center my-8 text-lg sm:text-xl">
-        <Code></Code>
-        <h2 class="ml-4 text-base sm:text-lg">Proyectos</h2>
-    </div>
-    <div>
-        {PROJECTS.map((project) => (
-            <article class="justify-center mt-16">
-                <h3 class="text-lg sm:text-xl md:text-2xl xss:text-xs xs:text-sm font-semibold text-yellow-200 mb-2">{project.title}</h3>
-                <p class="text-base sm:text-lg md:text-xl xss:text-xs xs:text-sm mb-4 text-pretty">{project.description}</p>
-                {project.imgs ? (
-                    <Carrousel imgs={project.imgs}></Carrousel>
-                ) : (
-                    <img class="rounded w-full h-auto" src={project.img} alt={`Captura de proyecto ${project.img}`} />
-                )}
-                <Tab class="place-items-center"
-                    id={project.id}
-                    tecnologias={project.tags}
-                    contribuciones={project.contribuciones}
-                    observaciones={project.obs}
-                    rol={project.rol}
-                    github={project.github}
-                    link={project.link}
-                />
-            </article>
-        ))}
-    </div>
+
+<section
+  id="pro"
+  class="w-full mx-auto lg:max-w-[1000px] pt-10 px-6 sm:px-8 md:px-12 xss:w-5/6 xs:w-7/8"
+>
+  <div class="flex flex-row justify-center my-8 text-lg sm:text-xl">
+    <Code />
+    <h2 class="ml-4 text-base sm:text-lg">Proyectos</h2>
+  </div>
+  <div>
+    {
+      PROJECTS.map((project) => (
+        <article class="justify-center mt-16">
+          <h3 class="text-lg sm:text-xl md:text-2xl xss:text-xs xs:text-sm font-semibold text-yellow-200 mb-2">
+            {project.title}
+          </h3>
+          <p class="text-base sm:text-lg md:text-xl xss:text-xs xs:text-sm mb-4 text-pretty">
+            {project.description}
+          </p>
+          {project.imgs ? (
+            <Carrousel imgs={project.imgs} />
+          ) : (
+            <img
+              class="rounded w-full h-auto"
+              src={project.img}
+              alt={`Captura de proyecto ${project.img}`}
+            />
+          )}
+          <Tab
+            class="place-items-center"
+            id={project.id}
+            tecnologias={project.tags}
+            contribuciones={project.contribuciones}
+            observaciones={project.obs}
+            rol={project.rol}
+            github={project.github}
+            link={project.link}
+          />
+        </article>
+      ))
+    }
+  </div>
 </section>
-
-

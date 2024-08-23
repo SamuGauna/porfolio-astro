@@ -13,6 +13,7 @@ import Jest from "./icons/Jest.astro";
 import Js from "./icons/Js.astro";
 import Mongo from "./icons/Mongo.astro";
 import MySQL from "./icons/MySQL.astro";
+import NEST from "./icons/NEST.astro";
 import Node from "./icons/Node.astro";
 import Numpy from "./icons/Numpy.astro";
 import Pandas from "./icons/Pandas.astro";
@@ -26,62 +27,137 @@ import Selenium from "./icons/Selenium.astro";
 import Sequelize from "./icons/Sequelize.astro";
 import SocketIo from "./icons/SocketIo.astro";
 import Swagger from "./icons/Swagger.astro";
+import Ts from "./icons/Ts.astro";
 
 const softskills = [
-    "Empatía",
-    "Capacidad al cambio",
-    "Orientación al cliente y al valor comercial",
-    "Aprendizaje continuo y Autodidacta",
-    "Trabajo en equipo",
-    "Comunicación efectiva",
-    "Soporte al cliente",
-    "Gestión de los interesados",
-    "Desarrollo profesional",
-    "Gestión de Cambios",
-    "Cultura de la organización",
-    "Análisis de los interesados",
-    "Gráficos RACI",
-    "Elección de equipo",
-    "Solución de problemas",
-    "Pensamiento estratégico",
-    "Competencias en gestión de Proyectos"
+  "Empatía",
+  "Capacidad al cambio",
+  "Orientación al cliente y al valor comercial",
+  "Aprendizaje continuo y Autodidacta",
+  "Trabajo en equipo",
+  "Comunicación efectiva",
+  "Soporte al cliente",
+  "Gestión de los interesados",
+  "Desarrollo profesional",
+  "Gestión de Cambios",
+  "Cultura de la organización",
+  "Análisis de los interesados",
+  "Gráficos RACI",
+  "Elección de equipo",
+  "Solución de problemas",
+  "Pensamiento estratégico",
+  "Competencias en gestión de Proyectos",
 ];
 const tecSkill = [
-    AWS, BeatifulSoup, Cluster, Express, FastAPI, Flask, Github, Handlebars, Java, Jest, Js, JWT, Mongo, MySQL, Node, Numpy, Pandas, PlanetScale, Postman, Prisma, Pytest, Python, Redis, Selenium, Sequelize, SocketIo, Swagger
+  Ts,
+  AWS,
+  NEST,
+  BeatifulSoup,
+  Cluster,
+  Express,
+  FastAPI,
+  Flask,
+  Github,
+  Handlebars,
+  Java,
+  Jest,
+  Js,
+  JWT,
+  Mongo,
+  MySQL,
+  Node,
+  Numpy,
+  Pandas,
+  PlanetScale,
+  Postman,
+  Prisma,
+  Pytest,
+  Python,
+  Redis,
+  Selenium,
+  Sequelize,
+  SocketIo,
+  Swagger,
 ];
 ---
-<p id="hab" class="mt-16 flex justify-center text-2xl font-semibold">Habilidades</p>
+
+<p id="hab" class="mt-16 flex justify-center text-2xl font-semibold">
+  Habilidades
+</p>
 <div class="mb-4 mt-2 border-gray-200 dark:border-gray-700">
-    <ul class="flex flex-wrap place-content-around -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-        <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Blandas</button>
-        </li>
-        <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Técnicas</button>
-        </li>
-    </ul>
+  <ul
+    class="flex flex-wrap place-content-around -mb-px text-sm font-medium text-center"
+    id="default-tab"
+    data-tabs-toggle="#default-tab-content"
+    role="tablist"
+  >
+    <li class="me-2" role="presentation">
+      <button
+        class="inline-block p-4 border-b-2 rounded-t-lg"
+        id="profile-tab"
+        data-tabs-target="#profile"
+        type="button"
+        role="tab"
+        aria-controls="profile"
+        aria-selected="false">Blandas</button
+      >
+    </li>
+    <li class="me-2" role="presentation">
+      <button
+        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+        id="settings-tab"
+        data-tabs-target="#settings"
+        type="button"
+        role="tab"
+        aria-controls="settings"
+        aria-selected="false">Técnicas</button
+      >
+    </li>
+  </ul>
 </div>
 <div id="default-tab-content">
-    <div class="grid grid-flow-col place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <ul class="grid grid-cols-3 sm:grid-cols-3 gap-2 justify-items-center text-sm text-white">
-            {Array.isArray(softskills) ? softskills.map((skill, index) => (
-                <li key={index} class="my-1 max-w-full break-words text-center">{skill}</li>
-            )) : (
-                <li>No especificado</li>
-            )}
-        </ul>
-    </div>
-    <div class="grid grid-flow-col place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-        <ul class="grid grid-cols-7  sm:grid-cols-6 gap-2 justify-items-center text-sm text-white">
-            {tecSkill && tecSkill.length > 0 ? (
-                tecSkill.map((Tecnologia, index) => (
-                    <li key={index} class="m-1 text-center">
-                        <Tecnologia />
-                    </li>
-                ))
-            ) : (
-                <li>No especificado</li>
-            )}
-        </ul>
-    </div>
+  <div
+    class="grid grid-flow-col place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800"
+    id="profile"
+    role="tabpanel"
+    aria-labelledby="profile-tab"
+  >
+    <ul
+      class="grid grid-cols-3 sm:grid-cols-3 gap-2 justify-items-center text-sm text-white"
+    >
+      {
+        Array.isArray(softskills) ? (
+          softskills.map((skill, index) => (
+            <li key={index} class="my-1 max-w-full break-words text-center">
+              {skill}
+            </li>
+          ))
+        ) : (
+          <li>No especificado</li>
+        )
+      }
+    </ul>
+  </div>
+  <div
+    class="grid grid-flow-col place-content-around hidden p-4 rounded-lg bg-transparent dark:bg-gray-800"
+    id="settings"
+    role="tabpanel"
+    aria-labelledby="settings-tab"
+  >
+    <ul
+      class="grid grid-cols-7 sm:grid-cols-6 gap-2 justify-items-center text-sm text-white"
+    >
+      {
+        tecSkill && tecSkill.length > 0 ? (
+          tecSkill.map((Tecnologia, index) => (
+            <li key={index} class="m-1 text-center">
+              <Tecnologia />
+            </li>
+          ))
+        ) : (
+          <li>No especificado</li>
+        )
+      }
+    </ul>
+  </div>
 </div>
